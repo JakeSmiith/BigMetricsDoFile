@@ -1,0 +1,724 @@
+
+**Week 2 Do File
+* Intro to Time-Series Data in STATA
+
+*Imports CSV into Stata
+import delimited "C:\Users\Peter\Dropbox\Further Econometrics\workshops\lecture1eg.csv"
+
+*Date Formatting
+gen day = date(year, "MDY", 2000)
+*Creates new variable day based on date string - Date function converts specified date format (MDY = Month-Day-Year) to a Stata-recognisable date format.
+ 
+format day %td 
+*format day %td: Formats day as a Stata time-series date variable (%td).
+
+gen year1 = year(day) 
+*gen year1 = year(day): Creates a new variable year1 extracting the year from day.
+
+
+* Alternative time variable - Defines a time variable starting from 1947 and incrementing by 1 for each observation. _n is the observation number, so this line produces a sequence for time indexing.
+generate time = 1947+_n-1
+
+
+tsset time, yearly  
+*Specifies time as the time variable for the dataset, informing Stata this is yearly time-series data. This enables Stata's time-series commands and functions.
+
+
+*Basic time-series plot
+tsline consumption
+*Plots the time series for the consumption variable over time.
+
+*Enhanced Plot with Titles
+twoway (tsline consumption), ytitle(Consumption) ttitle(Time) ///
+title(US Consumption (1947 - 2000))
+*Creates a time-series line plot for consumption with axis titles and a main title, displaying "US Consumption (1947 - 2000)."
+
+*Comparative Plot
+twoway (tsline consumption) (tsline dpi), ytitle(Consumption Income) ttitle(Time) ///
+title(US Consumption and Income (1947-2000))
+*Plots both consumption and dpi variables on the same chart, with titles for easier interpretation
+
+
+*Lag and Lead Generation for Time-Series
+gen consumpl1 = L.consumption
+gen consumpl2 = L2.consumption
+gen consumpf1 = F.consumption
+gen consumpf2 = F2.consumption
+*L. = Lag by x period, F. = Lag by x period
+
+*Differencing for time-series analysis
+gen dconsump = d.consumption
+gen d2consump = d2.consumption
+
+*First-difference plot
+twoway (tsline d.consumption), ytitle(First Difference of Consumption) ///
+ttitle(Time)title(US First Difference Consumption Function (1948 - 2000))
+*Plots the first difference in consumption over time, with relevant titles for easier interpretation.
+
+twoway (tsline d.consumption) (tsline d.dpi), ytitle(Consumption Income) ttitle(Time) ///
+title(US First Difference Consumption and First Difference Income (1948-2000))
+
+*Regression of log-transformed variables
+gen lnconsump = log(consumption)
+gen lndpi = log(dpi)
+regress lnconsump lndpi
+
+
+*Residual calculation and plotting
+predict res, residuals
+twoway (scatter res time), ytitle(residuals) ttitle(Time) ///
+title(Residuals from Static Regression Model)
+*predict res, residuals: Computes residuals from the previous regression.
+*Plots residuals against time to check for patterns or trends.
+
+*Autoregressive (AR) Model Estimation
+regress res L1.res
+regress res L1.res, noconstant
+*Estimates an AR(1) model for res, testing for autocorrelation with and without a constant term.
+
+
+
+* Scatterplot for residuals
+twoway (scatter res L1.res), ytitle(residuals) title(First lag of residuals) ///
+title (Residuals against First Lag of Residuals - Static Model)
+*Plots residuals against their first lag to visually assess the correlation between residuals over time.
+
+Durbin-Watson Test for Autocorrelation
+regress lnconsump lndpi
+estat dwatson
+*Re-runs the initial regression.
+*estat dwatson: Executes the Durbin-Watson test to assess autocorrelation in residuals.
+
+
+*Dynamic Model with Lagged Variables
+regress lnconsump lndpi L.lndpi L.lnconsump
+testparm L.lndpi L.lnconsump
+*Regresses lnconsump on lndpi, its lag (L.lndpi), and its own lag (L.lnconsump).
+*testparm L.lndpi L.lnconsump: Conducts a joint significance test on the lagged variables.
+
+
+
+*Breusch-Godfrey Test for Autocorrelation
+estat bgodfrey
+estat bgodfrey, nomiss0
+*Performs the Breusch-Godfrey test for autocorrelation, which is suitable when lagged dependent variables are in the model.
+
+
+
+
+*to do - week 3 onwards
+
+
+
+
+**Week 3 Do File
+use "C:\Users\dawso\Downloads\simulated data.dta" 
+
+* Inform STATA that we have time-series data
+tsset timevar
+
+*Visual plot of y1
+twoway (tsline y1)
+
+* Simply AR(1) Model
+regress y1 L.y1
+* Hypothesis test of first lag of y1 = 1 
+test L.y1=1
+
+* Similar approach for the other series
+
+twoway (tsline y2)
+regress y2 L.y2
+test L.y2=1
+
+twoway (tsline y4)
+regress y4 L.y4
+test L.y4=1
+
+twoway (tsline y5)
+regress y5 L.y5
+test L.y5=1
+
+twoway (tsline y3)
+regress y3 L.y3
+test L.y3=1
+
+* Conclusion, when the time-series variable is close to 1 then series appears 
+* to be non-stationary
+
+* Formalise this through the DF test
+* Reformulated AR regression model
+
+regress D.y1 L.y1
+
+* Standard Dickey-Fuller (DF) model (automated in STATA, with correct critical values)
+
+dfuller y1, regress lags(0)
+
+* Augmented Dickey-Fuller (ADF) model
+
+* Determining the max. lag length
+
+display 12*(500/100)^0.25
+
+* Determining the ADF (constant, trend, optimal lag length)
+
+regress D.y1 L.y1 L(1/18).D.y1
+regress D.y1 L.y1 L(1/18).D.y1, noconstant
+
+* Automated command in STATA
+
+dfuller y1, noconstant regress lags(18)
+
+
+* Repeating the process for the other time-series variables 
+
+* ADF for time-series variable y2
+twoway (tsline y2)
+dfuller y2, regress lags(18)
+dfuller y2, regress lags(17)
+dfuller y2, regress lags(16)
+dfuller y2, regress lags(15)
+dfuller y2, regress lags(14)
+dfuller y2, regress lags(13)
+dfuller y2, regress lags(12)
+dfuller y2, regress lags(11)
+dfuller y2, regress lags(10)
+dfuller y2, regress lags(9)
+dfuller y2, regress lags(8)
+dfuller y2, regress lags(7)
+dfuller y2, regress lags(6)
+dfuller y2, regress lags(5)
+dfuller y2, regress lags(4)
+dfuller y2, regress lags(3)
+dfuller y2, regress lags(2)
+dfuller y2, regress lags(1)
+dfuller y2, regress lags(0)
+
+twoway (tsline y4)
+regress D.y4 timevar L.y4 L(1/18).D.y4
+regress D.y4 L.y4 L(1/18).D.y4
+regress D.y4 L.y4 L(1/17).D.y4
+regress D.y4 L.y4 L(1/16).D.y4
+regress D.y4 L.y4 L(1/15).D.y4
+regress D.y4 L.y4 L(1/14).D.y4
+regress D.y4 L.y4 L(1/13).D.y4
+regress D.y4 L.y4 L(1/12).D.y4
+regress D.y4 L.y4 L(1/11).D.y4
+regress D.y4 L.y4 L(1/10).D.y4
+regress D.y4 L.y4 L(1/9).D.y4
+regress D.y4 L.y4 L(1/8).D.y4
+regress D.y4 L.y4 L(1/7).D.y4
+regress D.y4 L.y4 L(1/6).D.y4
+regress D.y4 L.y4 L(1/5).D.y4
+regress D.y4 L.y4 L(1/4).D.y4
+regress D.y4 L.y4 L(1/3).D.y4
+regress D.y4 L.y4 L(1/2).D.y4
+regress D.y4 L.y4 L.D.y4
+regress D.y4 L.y4
+dfuller y4, regress lags(0)
+dfuller y4, regress lags(0) noconstant
+
+
+twoway (tsline y5)
+regress D.y5 timevar L.y5 L(1/18).D.y5
+regress D.y5 timevar L.y5 L(1/17).D.y5
+regress D.y5 timevar L.y5 L(1/16).D.y5
+regress D.y5 timevar L.y5 L(1/15).D.y5
+regress D.y5 timevar L.y5 L(1/14).D.y5
+regress D.y5 timevar L.y5 L(1/13).D.y5
+regress D.y5 timevar L.y5 L(1/12).D.y5
+regress D.y5 timevar L.y5 L(1/11).D.y5
+regress D.y5 timevar L.y5 L(1/10).D.y5
+regress D.y5 timevar L.y5 L(1/9).D.y5
+
+dfuller y5, trend regress lags(9)
+
+* Regressing y5 on time trend
+regress y5 timevar
+
+*Obtaining the residuals
+predict res5, residual
+
+*Testing for stationarity on these residuals (de-trended series).
+*Result suggests the residuals (de-trended series) is stationary.
+twoway (tsline res5)
+regress D.res5 L.res5 L(1/18).D.res5
+regress D.res5 L.res5 L(1/17).D.res5
+regress D.res5 L.res5 L(1/16).D.res5
+regress D.res5 L.res5 L(1/15).D.res5
+regress D.res5 L.res5 L(1/14).D.res5
+regress D.res5 L.res5 L(1/13).D.res5
+regress D.res5 L.res5 L(1/12).D.res5
+regress D.res5 L.res5 L(1/11).D.res5
+regress D.res5 L.res5 L(1/10).D.res5
+regress D.res5 L.res5 L(1/9).D.res5
+regress D.res5 L.res5 L(1/9).D.res5, noconstant
+dfuller res5, regress lags(9)
+dfuller res5, noconstant regress lags(9)
+
+twoway (tsline y3)
+regress D.y3 timevar L.y3 L(1/18).D.y3
+regress D.y3 timevar L.y3 L(1/17).D.y3
+regress D.y3 timevar L.y3 L(1/16).D.y3
+regress D.y3 timevar L.y3 L(1/15).D.y3
+regress D.y3 timevar L.y3 L(1/14).D.y3
+
+dfuller y3, trend regress lags(14)
+
+regress y3 timevar
+predict res3, residual
+twoway (tsline res3)
+regress D.res3 L.res3 L(1/18).D.res3
+regress D.res3 L.res3 L(1/17).D.res3
+regress D.res3 L.res3 L(1/16).D.res3
+regress D.res3 L.res3 L(1/15).D.res3
+regress D.res3 L.res3 L(1/14).D.res3
+
+dfuller res3, regress lags(14)
+
+
+
+* What do we conclude?  Time-series variables y1 and y2 are stationary in 
+* levels form.  Time-series variables y3, y4 and y5 are non-stationary in levels form.
+* Evidence to suggest that y4 is a difference stationary process whereas y3 is 
+* trend stationary processes.  
+* The process associated with y5 is dependent on the significance level chosen.
+*For example, at the 5% suggests a trend stationary process 
+* whereas at the 1% level difference stationary process seems more appropriate.
+
+
+**Week 4 Do File
+import delimited "C:\Users\dawso\OneDrive\Desktop\ECO-6003A\STATA Workshops\Workshop 4\workshop4.csv"
+
+* generate monthly variable and inform Stata we have time-series data
+
+gen monthly = tm(2006m1)+_n-1
+format monthly %tm
+
+tsset monthly
+
+* Time series plot
+twoway (tsline ukcpi), ytitle(UKCPI) ttitle(Month) ///
+ title(UK Monthly Consumer Price Index 2006 - 2015)
+ 
+* Create logarithmic variable
+
+gen lnukcpi = log(ukcpi) 
+
+* We will also generate a time trend (that we might use when we consider the 
+* tests for stationarity)
+
+gen time = _n
+ 
+* The Schwert calculation suggests a maximum lag length of 13 lags as the 
+* starting point
+
+display 12*(116/100)^0.25
+
+* Testing for a unit root.  Lag length selection here is chosen on the 
+* basis of a sequential t-test.  The results below also include the statistics
+* for the BIC and AIC.  The same applies to the two other variables considered
+* in this seminar.
+
+regress D.lnukcpi L.lnukcpi L(1/13).D.lnukcpi time 
+
+
+* We can speed this up by using the "forvalues" loop 
+* (lags "split up" so that the resulting table of results can be read more easily) 
+
+forvalues lags = 8/13 {
+				eststo m`lags': regress D.lnukcpi L.lnukcpi L(1/`lags').D.lnukcpi time
+				}
+				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+				
+forvalues lags = 1/7 {
+				eststo m`lags': regress D.lnukcpi L.lnukcpi L(1/`lags').D.lnukcpi time
+				}
+				esttab m1 m2 m3 m4 m5 m6 m7, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+
+						
+* The equivalent tests using the automated ADF tests in STATA
+
+dfuller lnukcpi, trend regress lags(13)
+dfuller lnukcpi, trend regress lags(12)   
+
+* Dropping the trend
+dfuller lnukcpi, regress lags(13)
+dfuller lnukcpi, regress lags(12)
+
+* Testing for stationarity in first difference form
+
+twoway (tsline D.ukcpi), ytitle(D.UKCPI) ttitle(Month) ///
+ title(First Difference of UK Monthly Consumer Price Index 2006 - 2015)
+
+
+forvalues lags = 8/13 {
+				eststo m`lags': regress D2.lnukcpi L.D.lnukcpi L(1/`lags').D2.lnukcpi
+				}
+				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+
+dfuller D.lnukcpi, regress lags(13)
+
+* Testing for stationarity in second difference form
+
+forvalues lags = 8/13 {
+				eststo m`lags': regress D3.lnukcpi L.D2.lnukcpi L(1/`lags').D3.lnukcpi
+				}
+				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+
+forvalues lags = 1/7 {
+				eststo m`lags': regress D3.lnukcpi L.D2.lnukcpi L(1/`lags').D3.lnukcpi
+				}
+				esttab m1 m2 m3 m4 m5 m6, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)				
+				
+dfuller D2.lnukcpi, regress lags(10)
+
+*******************************************************************************
+* csi
+* Time series plot
+twoway (tsline csi), ytitle(CSI) ttitle(Month) ///
+ title(Consumer Sentiment Index 2006 - 2015)
+ 
+ forvalues lags = 8/13 {
+				eststo m`lags': regress D.csi L.csi L(1/`lags').D.csi time
+				}
+				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+				
+forvalues lags = 1/7 {
+				eststo m`lags': regress D.csi L.csi L(1/`lags').D.csi time
+				}
+				esttab m1 m2 m3 m4 m5 m6 m7, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+			
+				
+* The equivalent tests using the automated ADF tests in STATA
+
+dfuller csi, trend regress lags(0)
+dfuller csi, regress lags(0)
+
+
+* Testing for stationarity in first difference form
+
+twoway (tsline D.csi), ytitle(D.CSI) ttitle(Month) ///
+ title(First Difference of Consumer Sentiment Index 2006 - 2015)
+
+
+forvalues lags = 8/13 {
+				eststo m`lags': regress D2.csi L.D.csi L(1/`lags').D2.csi
+				}
+				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+
+
+forvalues lags = 1/7 {
+				eststo m`lags': regress D2.csi L.D.csi L(1/`lags').D2.csi
+				}
+				esttab m1 m2 m3 m4 m5 m6 m7, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+							
+dfuller D.csi, regress lags(0)
+
+*******************************************************************************
+* olympic2
+
+forvalues lags = 8/13 {
+				eststo m`lags': regress D.olympic2 L.olympic2 L(1/`lags').D.olympic2 time
+				}
+				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+				
+forvalues lags = 1/7 {
+				eststo m`lags': regress D.olympic2 L.olympic2 L(1/`lags').D.olympic2 time
+				}
+				esttab m1 m2 m3 m4 m5 m6 m7, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+	
+	
+dfuller olympic2, trend regress lags(0)
+
+
+* Time series plot
+twoway (tsline olympic2), ytitle(Olympic Inspiration) ttitle(Month) ///
+ title(Olympics Inspiring Participation 2006 - 2016)
+
+* splitting up the sample
+
+* Note for the pre-break period, the result is sensitive to chosen lag length
+* Cannot reject null if use 12 lags but can if 0 lags chosen 
+
+dfuller olympic2 in 1/79, regress lags(12)
+dfuller olympic2 in 1/79, regress lags(0)
+
+* Post-break period, result less sensitive to chosen lag length
+
+dfuller olympic2 in 80/123, regress lags(6)
+dfuller olympic2 in 80/123, regress lags(5)
+dfuller olympic2 in 80/123, regress lags(0)
+
+*******************************************************************************
+
+* Results using DF-GLS
+
+dfgls lnukcpi
+dfgls D.lnukcpi
+dfgls D2.lnukcpi
+
+dfgls csi
+dfgls D.csi
+
+dfgls olympic2
+dfgls D.olympic2
+
+dfgls olympic2 in 1/79
+dfgls olympic2 in 80/123
+
+dfgls D.olympic2 in 1/79
+dfgls D.olympic2 in 80/123 
+
+**Week 5 Do File
+* revised monthly variable
+
+gen monthly = tm(1989m1)+_n-1
+format monthly %tm
+
+tsset monthly
+
+* Restrict sample to the period September 2010 to September 2015
+
+* Time series plot
+twoway (tsline unleaded diesel in 261/321), ytitle(Price of Unleaded Petrol and ///
+Diesel) ttitle(Month) /// 
+title(Price of Unleaded Petrol and Diesel Sept 2010 to Sept 2015)
+
+* Create log version of the variables
+
+gen lnunleaded = log(unleaded)
+gen lndiesel = log(diesel)
+gen lncrude = log(crude)
+
+* ADF tests
+
+*(Follow the procedure introduced in Workshops 3 & 4) but make sure the sample is
+* restricted to the sample period Sept 2010 to Sept 2015 for unleaded and diesel  
+* and August 2010 to August 2015 for crude.  All series appear to be I(1) 
+* processes (details not provided here - for you to confirm in your own time)
+
+* Maximum lag length (Schwert formula)
+
+display 12*(61/100)^0.25
+							
+* Cointegrating regression (part (ai))
+
+regress lnunleaded lndiesel in 261/321
+
+predict resa in 261/321, residuals
+
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.resa L.resa L(1/`lags').D.resa in 261/321
+				}
+				esttab m6 m7 m8 m9 m10 m11
+
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.resa L.resa L(1/`lags').D.resa in 261/321
+				}
+				esttab m1 m2 m3 m4 m5				
+				
+* Note here a sequential test using the 5% level or better was used to select 
+* the optimal number of lags
+
+* Using the DF routine automated in STATA (note: incorrect critical values however 
+* - need to use table of critical values from multivariate cointegration test or egranger command - see below)				
+
+dfuller resa, noconstant regress lags(5)
+
+
+* If STATA allows us, we can add the egranger ado file (provides same results as above, but now with the correct critical values)
+
+egranger lnunleaded lndiesel in 261/321, lags(5) regress
+
+
+
+* Cointegrating regression (part (aii))
+
+twoway (tsline unleaded crude in 260/320), ytitle(Price of Unleaded Petrol and ///
+Crude Oil) ttitle(Month) /// 
+title(Price of Unleaded Petrol and Crude Oil Aug 2010 to Aug 2015)
+
+* Again we will assume both series are I(1).
+
+
+regress lnunleaded lncrude in 260/320
+
+predict resb in 260/320, residuals
+
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.resb L.resb L(1/`lags').D.resb in 260/320
+				}
+				esttab m6 m7 m8 m9 m10 m11
+
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.resb L.resb L(1/`lags').D.resb in 260/320
+				}
+				esttab m1 m2 m3 m4 m5
+				
+				
+dfuller resb, noconstant regress lags(0)
+
+* Note here if we used the incorrect critical values our conclusions would be 
+* different compared to using the correct critical values - i.e. ADF test 
+* from above would reject the null at 5% level (suggesting cointegrated series), 
+* whereas using the correct critical values suggest there is no cointegrating relationship.
+
+egranger lnunleaded lncrude in 260/320, lags(0) regress
+
+
+* ECM (part (ai) only - since ECM only applies to cointegrated series)
+* Note - in the live session we briefly discussed how to choose the optimal 
+* lag length when considering multiple variables - we will revisit this again 
+* in workshop 6
+
+regress D.lnunleaded D.lndiesel L(1/11).D.lnunleaded L(1/11).D.lndiesel L.resa in 261/321
+regress D.lnunleaded D.lndiesel L(1/10).D.lnunleaded L(1/10).D.lndiesel L.resa in 261/321
+regress D.lnunleaded D.lndiesel L(1/9).D.lnunleaded L(1/9).D.lndiesel L.resa in 261/321
+regress D.lnunleaded D.lndiesel L(1/8).D.lnunleaded L(1/8).D.lndiesel L.resa in 261/321
+regress D.lnunleaded D.lndiesel L(1/7).D.lnunleaded L(1/7).D.lndiesel L.resa in 261/321
+regress D.lnunleaded D.lndiesel L(1/6).D.lnunleaded L(1/6).D.lndiesel L.resa in 261/321
+regress D.lnunleaded D.lndiesel L(1/5).D.lnunleaded L(1/5).D.lndiesel L.resa in 261/321
+regress D.lnunleaded D.lndiesel L(1/4).D.lnunleaded L(1/4).D.lndiesel L.resa in 261/321
+regress D.lnunleaded D.lndiesel L(1/3).D.lnunleaded L(1/3).D.lndiesel L.resa in 261/321
+
+**Week 6 Do File
+* monthly variable
+
+gen monthly = tm(1989m1)+_n-1
+format monthly %tm
+
+tsset monthly
+
+* Restrict sample to the period September 2010 to September 2015
+
+* Time series plot
+twoway (tsline unleaded diesel in 261/321), ytitle(Price of Unleaded Petrol and ///
+Diesel) ttitle(Month) /// 
+title(Price of Unleaded Petrol and Diesel Sept 2010 to Sept 2015)
+
+* Create log version of the variables
+
+gen lnunleaded = log(unleaded)
+gen lndiesel = log(diesel)
+gen lncrude = log(crude)
+
+* In Workshop 5 we established that log of unleaded petrol prices and the log of
+* diesel prices were cointegrated whereas the log of unleaded petrol prices and
+* the log of crude oil prices was not.  The appropriate model to estimate in 
+* order to determine whether and the form of Granger causality will therefore 
+* differ
+
+* Since only the first relationship is cointegrated we only need to include the
+* first lag of the residuals when estimate the dynamic model associated with 
+* log unleaded with log diesel.
+
+regress lnunleaded lndiesel in 261/321
+
+predict resa in 261/321, residuals
+
+
+* Granger causality (log unleaded and log diesel)
+
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.lnunleaded L(1/`lags').D.lnunleaded L(1/`lags').D.lndiesel L.resa in 261/321
+				}
+				esttab m6 m7 m8 m9 m10 m11
+
+
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.lnunleaded L(1/`lags').D.lnunleaded L(1/`lags').D.lndiesel L.resa in 261/321
+				}
+				esttab m1 m2 m3 m4 m5
+	
+
+* Optimal lag length using sequential t-test may vary depending on approach used
+* Here optimal appears to be 9 
+
+regress    D.lnunleaded L(1/9).D.lnunleaded L(1/9).D.lndiesel L.resa in 261/321
+testparm L(1/9).D.lndiesel L.resa 
+ 
+	
+	
+* For the reverse, we should re-estimate the regression model with lndiesel as
+* the dependent variable and lnunleaded as the explanatory variable and obtain
+* the corresponding residuals. (Should also check for cointegration - left as 
+* an exercise for you to do)
+
+regress lndiesel lnunleaded in 261/321
+
+predict resa1 in 261/321, residuals
+
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.lndiesel L(1/`lags').D.lnunleaded L(1/`lags').D.lndiesel L.resa1 in 261/321
+				}
+				esttab m6 m7 m8 m9 m10 m11
+
+
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.lndiesel L(1/`lags').D.lnunleaded L(1/`lags').D.lndiesel L.resa1 in 261/321
+				}
+				esttab m1 m2 m3 m4 m5
+	
+
+* Optimal lag length using sequential t-test may vary depending on approach used
+* Here optimal (again) appears to be 9 
+
+regress    D.lndiesel L(1/9).D.lnunleaded L(1/9).D.lndiesel L.resa1 in 261/321
+testparm L(1/9).D.lnunleaded L.resa1				
+
+
+* Granger causality (log unleaded and log crude oil)
+
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.lnunleaded L(1/`lags').D.lnunleaded L(1/`lags').D.lncrude in 260/320
+				}
+				esttab m6 m7 m8 m9 m10 m11
+
+
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.lnunleaded L(1/`lags').D.lnunleaded L(1/`lags').D.lncrude in 260/320
+				}
+				esttab m1 m2 m3 m4 m5
+
+* Here the optimal number of lags could be one of the following (depending on approach used)
+* 2 lags of each (although the second lag for lncrude is insignificant) 
+* or 2 lags of lnunleaded with 1 lag of lncrude 
+
+regress    D.lnunleaded L(1/2).D.lnunleaded L(1/2).D.lncrude in 260/320
+
+regress    D.lnunleaded L(1/2).D.lnunleaded L.D.lncrude in 260/320				
+				
+* Suppose we go with the one with 2 lags of each variable and performing the appropriate F-test
+
+regress    D.lnunleaded L(1/2).D.lnunleaded L(1/2).D.lncrude in 260/320
+testparm L(1/2).D.lncrude 
+
+
+* For the reverse relationship
+
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.lncrude L(1/`lags').D.lnunleaded L(1/`lags').D.lncrude in 260/320
+				}
+				esttab m6 m7 m8 m9 m10 m11
+
+
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.lncrude L(1/`lags').D.lnunleaded L(1/`lags').D.lncrude in 260/320
+				}
+				esttab m1 m2 m3 m4 m5
+				
+* In this case we will go with one lag of each
+
+regress    D.lncrude L.D.lnunleaded L.D.lncrude in 260/320
+testparm L.D.lnunleaded 
+
+				
+
+
+
+
+				
+
+
