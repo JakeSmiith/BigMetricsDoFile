@@ -104,28 +104,26 @@ estat bgodfrey, nomiss0
 *Performs the Breusch-Godfrey test for autocorrelation, which is suitable when lagged dependent variables are in the model.
 
 
-
-
-*to do - week 3 onwards
-
-
-
-
 **Week 3 Do File
 use "C:\Users\dawso\Downloads\simulated data.dta" 
 
-* Inform STATA that we have time-series data
+* Inform STATA of time-series data
 tsset timevar
+*Sets the dataset as time-series data with timevar as the time variable, enabling time-series functions and lags
 
-*Visual plot of y1
+*Plotting time-series Y1
 twoway (tsline y1)
+*Plots a time-series line graph of y1.
 
-* Simply AR(1) Model
+* Simple AR(1) model for Y1
 regress y1 L.y1
-* Hypothesis test of first lag of y1 = 1 
-test L.y1=1
 
-* Similar approach for the other series
+* Hypothesis test for AR(1) Coefficient of y1
+test L.y1=1
+*Tests if the coefficient of the first lag of y1 equals 1, indicating if y1 is non-stationary.
+
+
+* Repeating AR(1) Models and Hypothesis Tests for y2,y3,y4,y5
 
 twoway (tsline y2)
 regress y2 L.y2
@@ -143,37 +141,28 @@ twoway (tsline y3)
 regress y3 L.y3
 test L.y3=1
 
-* Conclusion, when the time-series variable is close to 1 then series appears 
-* to be non-stationary
+*This pattern is repeated for y2, y3, y4, and y5 to visualize each time series, fit AR(1) models, and test for non-stationarity by checking if the AR coefficient equals 1.
 
-* Formalise this through the DF test
-* Reformulated AR regression model
 
+*Dickey-Fuller Test for Non-Stationarity of y1
 regress D.y1 L.y1
-
-* Standard Dickey-Fuller (DF) model (automated in STATA, with correct critical values)
-
 dfuller y1, regress lags(0)
+*First, fits a regression for D.y1 (the difference of y1) on its lagged level to check for stationarity.
+*Then uses dfuller, a built-in function for Dickey-Fuller tests, specifying zero lags for simplicity.
 
 * Augmented Dickey-Fuller (ADF) model
 
-* Determining the max. lag length
-
 display 12*(500/100)^0.25
-
-* Determining the ADF (constant, trend, optimal lag length)
-
 regress D.y1 L.y1 L(1/18).D.y1
 regress D.y1 L.y1 L(1/18).D.y1, noconstant
-
-* Automated command in STATA
-
 dfuller y1, noconstant regress lags(18)
+*display calculates the maximum lag length based on a sample size (500) using an empirical rule.
+*Regressions fit D.y1 on lagged values of y1 and differences up to 18 lags, with and without a constant term.
+*The dfuller command tests y1 for stationarity using an ADF test with 18 lags and no constant term.
+*This regression includes a constant by default, which means Stata will estimate an intercept for the model
+*Second line (regress D.y1 L.y1 L(1/18).D.y1, noconstant): Adding the noconstant option removes the intercept from the model, forcing the regression line to go through the origin
 
-
-* Repeating the process for the other time-series variables 
-
-* ADF for time-series variable y2
+*Repeating ADF test for y2
 twoway (tsline y2)
 dfuller y2, regress lags(18)
 dfuller y2, regress lags(17)
@@ -194,7 +183,9 @@ dfuller y2, regress lags(3)
 dfuller y2, regress lags(2)
 dfuller y2, regress lags(1)
 dfuller y2, regress lags(0)
+*Plots and performs ADF tests on y2 with varying lengths to determine optimal lags. 
 
+*Augmented Dickey-Fuller for y4 with Trend Component
 twoway (tsline y4)
 regress D.y4 timevar L.y4 L(1/18).D.y4
 regress D.y4 L.y4 L(1/18).D.y4
@@ -218,8 +209,9 @@ regress D.y4 L.y4 L.D.y4
 regress D.y4 L.y4
 dfuller y4, regress lags(0)
 dfuller y4, regress lags(0) noconstant
+*Similar steps as y1, adding time trend in regressions plotting y4. 
 
-
+*Trend analysis and stationarity test for y5
 twoway (tsline y5)
 regress D.y5 timevar L.y5 L(1/18).D.y5
 regress D.y5 timevar L.y5 L(1/17).D.y5
@@ -231,17 +223,12 @@ regress D.y5 timevar L.y5 L(1/12).D.y5
 regress D.y5 timevar L.y5 L(1/11).D.y5
 regress D.y5 timevar L.y5 L(1/10).D.y5
 regress D.y5 timevar L.y5 L(1/9).D.y5
-
 dfuller y5, trend regress lags(9)
+*Tests y5 for trend stationarity by including a time trend and fitting regressions at various lag levels.
 
-* Regressing y5 on time trend
+* Regressing y5 residuals for stationarity
 regress y5 timevar
-
-*Obtaining the residuals
 predict res5, residual
-
-*Testing for stationarity on these residuals (de-trended series).
-*Result suggests the residuals (de-trended series) is stationary.
 twoway (tsline res5)
 regress D.res5 L.res5 L(1/18).D.res5
 regress D.res5 L.res5 L(1/17).D.res5
@@ -256,15 +243,17 @@ regress D.res5 L.res5 L(1/9).D.res5
 regress D.res5 L.res5 L(1/9).D.res5, noconstant
 dfuller res5, regress lags(9)
 dfuller res5, noconstant regress lags(9)
+*Regresses y5 on time, obtaining residuals to remove the trend; performs stationarity tests on these residuals
 
+*Trend analysis and stationarity test for y3
 twoway (tsline y3)
 regress D.y3 timevar L.y3 L(1/18).D.y3
 regress D.y3 timevar L.y3 L(1/17).D.y3
 regress D.y3 timevar L.y3 L(1/16).D.y3
 regress D.y3 timevar L.y3 L(1/15).D.y3
 regress D.y3 timevar L.y3 L(1/14).D.y3
-
 dfuller y3, trend regress lags(14)
+*Similar steps for y3
 
 regress y3 timevar
 predict res3, residual
@@ -277,95 +266,86 @@ regress D.res3 L.res3 L(1/14).D.res3
 
 dfuller res3, regress lags(14)
 
-
-
-* What do we conclude?  Time-series variables y1 and y2 are stationary in 
-* levels form.  Time-series variables y3, y4 and y5 are non-stationary in levels form.
-* Evidence to suggest that y4 is a difference stationary process whereas y3 is 
-* trend stationary processes.  
-* The process associated with y5 is dependent on the significance level chosen.
-*For example, at the 5% suggests a trend stationary process 
-* whereas at the 1% level difference stationary process seems more appropriate.
-
-
 **Week 4 Do File
+*Imports CSV file containing data into Stata
 import delimited "C:\Users\dawso\OneDrive\Desktop\ECO-6003A\STATA Workshops\Workshop 4\workshop4.csv"
 
-* generate monthly variable and inform Stata we have time-series data
+* Generate monthly variable and set time-series data
 
 gen monthly = tm(2006m1)+_n-1
 format monthly %tm
-
 tsset monthly
+*Creates a monthly time variable starting from January 2006 and increments by 1 for each observation.
+*Formats monthly as a time variable in a monthly format.
+*Sets the data as time-series data using monthly as the time variable
 
-* Time series plot
+* Time series plot of UK CPI
 twoway (tsline ukcpi), ytitle(UKCPI) ttitle(Month) ///
  title(UK Monthly Consumer Price Index 2006 - 2015)
- 
+*Plots the time series of ukcpi, the UK Consumer Price Index, from 2006 to 2015 with custom titles for the y-axis and overall graph.
+
 * Create logarithmic variable
-
 gen lnukcpi = log(ukcpi) 
+*Generates new variable lnukcpi, which is natural logarithm of ukcpi
 
-* We will also generate a time trend (that we might use when we consider the 
-* tests for stationarity)
-
+*Generate time trend variable
 gen time = _n
  
-* The Schwert calculation suggests a maximum lag length of 13 lags as the 
-* starting point
-
+*Calculate Maximum Lag Length Using Schwert’s Rule
 display 12*(116/100)^0.25
+*Calculates the maximum lag length (13) based on the sample size (116) using Schwert's formula, which helps in determining the optimal number of lags for stationarity tests.
 
-* Testing for a unit root.  Lag length selection here is chosen on the 
-* basis of a sequential t-test.  The results below also include the statistics
-* for the BIC and AIC.  The same applies to the two other variables considered
-* in this seminar.
 
+*Testing for unit root using sequential t-test
 regress D.lnukcpi L.lnukcpi L(1/13).D.lnukcpi time 
+*Regresses the differenced lnukcpi on its lagged level, 13 lags of the differenced lnukcpi, and a time trend. This regression is used to test for a unit root in lnukcpi
 
-
-* We can speed this up by using the "forvalues" loop 
-* (lags "split up" so that the resulting table of results can be read more easily) 
-
+*Using loop to automate regressions with varying lag lengths
 forvalues lags = 8/13 {
 				eststo m`lags': regress D.lnukcpi L.lnukcpi L(1/`lags').D.lnukcpi time
 				}
 				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
-				
+*Runs regressions with varying lag lengths (from 8 to 13) and stores each model.
+*Uses esttab to display the results with BIC, AIC statistics, and significance stars.
+
+*Repeating Regressions with Fewer Lags (1 to 7)
 forvalues lags = 1/7 {
 				eststo m`lags': regress D.lnukcpi L.lnukcpi L(1/`lags').D.lnukcpi time
 				}
 				esttab m1 m2 m3 m4 m5 m6 m7, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
-
+*Runs regressions with lag lengths from 1 to 7 and displays results similarly
 						
-* The equivalent tests using the automated ADF tests in STATA
-
+*Automated Dickey-Fuller Test (ADF) with and without trend
 dfuller lnukcpi, trend regress lags(13)
 dfuller lnukcpi, trend regress lags(12)   
-
-* Dropping the trend
 dfuller lnukcpi, regress lags(13)
 dfuller lnukcpi, regress lags(12)
+*Performs ADF tests on lnukcpi with and without a trend using specified lag lengths.
+
 
 * Testing for stationarity in first difference form
-
 twoway (tsline D.ukcpi), ytitle(D.UKCPI) ttitle(Month) ///
  title(First Difference of UK Monthly Consumer Price Index 2006 - 2015)
+*Plots the first differenced ukcpi to check for stationarity visually.
 
-
+*First-Difference Stationarity Test with Varying Lags (8 to 13)
 forvalues lags = 8/13 {
 				eststo m`lags': regress D2.lnukcpi L.D.lnukcpi L(1/`lags').D2.lnukcpi
 				}
 				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+*Regresses the second difference of lnukcpi on the lagged first difference with varying lag lengths (from 8 to 13) to test for stationarity.
 
+*ADF test on First Difference
 dfuller D.lnukcpi, regress lags(13)
+*Performs ADF test on first difference of lnukcpi with 13 lags
 
 * Testing for stationarity in second difference form
-
 forvalues lags = 8/13 {
 				eststo m`lags': regress D3.lnukcpi L.D2.lnukcpi L(1/`lags').D3.lnukcpi
 				}
 				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+*Regresses third difference of lnukcpi on lagged second differenece with lags from 8 to 13.
+
 
 forvalues lags = 1/7 {
 				eststo m`lags': regress D3.lnukcpi L.D2.lnukcpi L(1/`lags').D3.lnukcpi
@@ -375,11 +355,11 @@ forvalues lags = 1/7 {
 dfuller D2.lnukcpi, regress lags(10)
 
 *******************************************************************************
-* csi
-* Time series plot
+* 
+* Time-Series Plot of Consumer Sentiment Index (CSI)
 twoway (tsline csi), ytitle(CSI) ttitle(Month) ///
  title(Consumer Sentiment Index 2006 - 2015)
- 
+*Plots csi (consumer sentiment index) from 2006 to 2015.  
  forvalues lags = 8/13 {
 				eststo m`lags': regress D.csi L.csi L(1/`lags').D.csi time
 				}
@@ -391,22 +371,22 @@ forvalues lags = 1/7 {
 				esttab m1 m2 m3 m4 m5 m6 m7, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
 			
 				
-* The equivalent tests using the automated ADF tests in STATA
-
+* ADF test on CSI
 dfuller csi, trend regress lags(0)
 dfuller csi, regress lags(0)
+*Performs ADF tests on CSI with and without trend
 
-
-* Testing for stationarity in first difference form
-
+* Testing for stationarity in first difference for CSI
 twoway (tsline D.csi), ytitle(D.CSI) ttitle(Month) ///
  title(First Difference of Consumer Sentiment Index 2006 - 2015)
+*Plots first differenced CSI to check for stationarity
 
-
+*Olympic Participation Variable Stationarity Tests
 forvalues lags = 8/13 {
 				eststo m`lags': regress D2.csi L.D.csi L(1/`lags').D2.csi
 				}
 				esttab m8 m9 m10 m11 m12 m13, stats(bic aic) star(* 0.1 ** 0.05 *** 0.01)
+*Runs regressions on olympic2 to test for stationarity with a time trend.
 
 
 forvalues lags = 1/7 {
@@ -437,10 +417,7 @@ dfuller olympic2, trend regress lags(0)
 twoway (tsline olympic2), ytitle(Olympic Inspiration) ttitle(Month) ///
  title(Olympics Inspiring Participation 2006 - 2016)
 
-* splitting up the sample
-
-* Note for the pre-break period, the result is sensitive to chosen lag length
-* Cannot reject null if use 12 lags but can if 0 lags chosen 
+*Splitting sample for pre- and post-break period
 
 dfuller olympic2 in 1/79, regress lags(12)
 dfuller olympic2 in 1/79, regress lags(0)
@@ -451,13 +428,16 @@ dfuller olympic2 in 80/123, regress lags(6)
 dfuller olympic2 in 80/123, regress lags(5)
 dfuller olympic2 in 80/123, regress lags(0)
 
+*Tests olympic2 for stationarity in pre- and post-break periods with specified lags.
+
 *******************************************************************************
 
-* Results using DF-GLS
+* DF-GLS tests for stationarity
 
 dfgls lnukcpi
 dfgls D.lnukcpi
 dfgls D2.lnukcpi
+*Uses DF-GLS (Dickey-Fuller GLS) tests for enhanced stationarity testing on various transformations of lnukcpi.
 
 dfgls csi
 dfgls D.csi
@@ -472,20 +452,21 @@ dfgls D.olympic2 in 1/79
 dfgls D.olympic2 in 80/123 
 
 **Week 5 Do File
-* revised monthly variable
-
+*Create monthly time variable and set time-series data
 gen monthly = tm(1989m1)+_n-1
 format monthly %tm
-
 tsset monthly
+*Creates a new time variable monthly, starting from January 1989 and incrementing by 1 for each observation.
+*Formats monthly as a time variable in a monthly format.
+*Sets the data as time-series data using monthly as the time variable.
 
-* Restrict sample to the period September 2010 to September 2015
 
-* Time series plot
+* Restrict sample period for plotting
 twoway (tsline unleaded diesel in 261/321), ytitle(Price of Unleaded Petrol and ///
 Diesel) ttitle(Month) /// 
 title(Price of Unleaded Petrol and Diesel Sept 2010 to Sept 2015)
-
+*Plots the time series of unleaded and diesel prices between observations 261 and 321, corresponding to the period September 2010 to September 2015.
+Adds custom titles for the y-axis, t-axis, and the overall graph.
 * Create log version of the variables
 
 gen lnunleaded = log(unleaded)
