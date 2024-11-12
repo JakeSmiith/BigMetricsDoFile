@@ -467,71 +467,67 @@ Diesel) ttitle(Month) ///
 title(Price of Unleaded Petrol and Diesel Sept 2010 to Sept 2015)
 *Plots the time series of unleaded and diesel prices between observations 261 and 321, corresponding to the period September 2010 to September 2015.
 Adds custom titles for the y-axis, t-axis, and the overall graph.
-* Create log version of the variables
 
+* Create logarithmic variables
 gen lnunleaded = log(unleaded)
 gen lndiesel = log(diesel)
 gen lncrude = log(crude)
-
+*Generates new variables lnunleaded, lndiesel, and lncrude as the natural logarithms of unleaded, diesel, and crude, respectively. This transformation helps linearize exponential growth trends and stabilize variance for econometric analysis
 * ADF tests
-
-*(Follow the procedure introduced in Workshops 3 & 4) but make sure the sample is
-* restricted to the sample period Sept 2010 to Sept 2015 for unleaded and diesel  
-* and August 2010 to August 2015 for crude.  All series appear to be I(1) 
-* processes (details not provided here - for you to confirm in your own time)
+*Here, the instructions indicate performing Augmented Dickey-Fuller (ADF) tests for each variable (lnunleaded, lndiesel, and lncrude) to determine if they are stationary or if they need to be differenced to become stationary (I(1) processes). This is done over restricted time periods.
 
 * Maximum lag length (Schwert formula)
-
 display 12*(61/100)^0.25
 							
-* Cointegrating regression (part (ai))
-
+* Cointegrating regression
 regress lnunleaded lndiesel in 261/321
-
 predict resa in 261/321, residuals
+*Regresses lnunleaded on lndiesel over the sample period from observation 261 to 321, representing September 2010 to September 2015.
+*Saves the residuals from this regression as resa to test if there is a stationary linear relationship (cointegration) between the two variables.
 
+*Run Sequential Regressions on Residuals
 forvalues lags = 6/11 {
 				eststo m`lags': regress D.resa L.resa L(1/`lags').D.resa in 261/321
 				}
 				esttab m6 m7 m8 m9 m10 m11
+*Runs regressions of the differenced residuals (D.resa) on their lagged levels and lagged differences from 6 to 11 lags, to test the residuals’ stationarity over the selected period.
+*Stores the results for comparison.
 
+*Additional Regressions with Fewer Lags
 forvalues lags = 1/5 {
 				eststo m`lags': regress D.resa L.resa L(1/`lags').D.resa in 261/321
 				}
 				esttab m1 m2 m3 m4 m5				
 				
-* Note here a sequential test using the 5% level or better was used to select 
-* the optimal number of lags
-
-* Using the DF routine automated in STATA (note: incorrect critical values however 
-* - need to use table of critical values from multivariate cointegration test or egranger command - see below)				
-
+Automated Dickey-Fuller Test on Residuals
 dfuller resa, noconstant regress lags(5)
+*Performs the Dickey-Fuller test on resa with 5 lags and without a constant. This is to determine if the residuals from the cointegration regression are stationary, suggesting a cointegrating relationship.
 
-
-* If STATA allows us, we can add the egranger ado file (provides same results as above, but now with the correct critical values)
-
+*Cointegration Test with Correct Critical Values Using egranger Command
 egranger lnunleaded lndiesel in 261/321, lags(5) regress
+*Runs the Engle-Granger cointegration test on lnunleaded and lndiesel with 5 lags over the restricted period, using correct critical values for a more accurate determination of cointegration.
 
 
 
-* Cointegrating regression (part (aii))
+* Cointegrating Regression between lnunleaded and lncrude (Part (aii))
 
 twoway (tsline unleaded crude in 260/320), ytitle(Price of Unleaded Petrol and ///
 Crude Oil) ttitle(Month) /// 
 title(Price of Unleaded Petrol and Crude Oil Aug 2010 to Aug 2015)
 
-* Again we will assume both series are I(1).
-
+*Plots the prices of unleaded and crude over the period August 2010 to August 2015 to visualize their relationship.
+stata
 
 regress lnunleaded lncrude in 260/320
-
 predict resb in 260/320, residuals
+*Regresses lnunleaded on lncrude over the selected period and saves the residuals as resb for cointegration testing.
 
+*ADF test on residuals resb for cointegration between lnunleaded and lncrude
 forvalues lags = 6/11 {
 				eststo m`lags': regress D.resb L.resb L(1/`lags').D.resb in 260/320
 				}
 				esttab m6 m7 m8 m9 m10 m11
+*Runs regressions of the differenced residuals (D.resb) on their lagged levels and lagged differences from 6 to 11 lags, to determine if lnunleaded and lncrude are cointegrated.
 
 forvalues lags = 1/5 {
 				eststo m`lags': regress D.resb L.resb L(1/`lags').D.resb in 260/320
@@ -541,18 +537,11 @@ forvalues lags = 1/5 {
 				
 dfuller resb, noconstant regress lags(0)
 
-* Note here if we used the incorrect critical values our conclusions would be 
-* different compared to using the correct critical values - i.e. ADF test 
-* from above would reject the null at 5% level (suggesting cointegrated series), 
-* whereas using the correct critical values suggest there is no cointegrating relationship.
-
+*Engle-Granger Test with egranger for Correct Critical Values
 egranger lnunleaded lncrude in 260/320, lags(0) regress
+*Uses egranger to test cointegration between lnunleaded and lncrude with correct critical values.
 
-
-* ECM (part (ai) only - since ECM only applies to cointegrated series)
-* Note - in the live session we briefly discussed how to choose the optimal 
-* lag length when considering multiple variables - we will revisit this again 
-* in workshop 6
+*Error Correction Model (ECM) for Cointegrated Series (lnunleaded and lndiesel)
 
 regress D.lnunleaded D.lndiesel L(1/11).D.lnunleaded L(1/11).D.lndiesel L.resa in 261/321
 regress D.lnunleaded D.lndiesel L(1/10).D.lnunleaded L(1/10).D.lndiesel L.resa in 261/321
@@ -563,45 +552,38 @@ regress D.lnunleaded D.lndiesel L(1/6).D.lnunleaded L(1/6).D.lndiesel L.resa in 
 regress D.lnunleaded D.lndiesel L(1/5).D.lnunleaded L(1/5).D.lndiesel L.resa in 261/321
 regress D.lnunleaded D.lndiesel L(1/4).D.lnunleaded L(1/4).D.lndiesel L.resa in 261/321
 regress D.lnunleaded D.lndiesel L(1/3).D.lnunleaded L(1/3).D.lndiesel L.resa in 261/321
+*Runs an ECM by regressing D.lnunleaded on D.lndiesel, 11 lags of each differenced variable, and the lagged error term L.resa to capture the long-run equilibrium adjustment process between lnunleaded and lndiesel.
 
 **Week 6 Do File
-* monthly variable
-
+*Creating monthly time variable
 gen monthly = tm(1989m1)+_n-1
 format monthly %tm
-
 tsset monthly
+*gen monthly = tm(1989m1)+_n-1: Creates a time variable monthly, beginning from January 1989 and incrementing by one for each observation.
+*format monthly %tm: Formats monthly as a time-series variable displayed in a monthly format.
+*tsset monthly: Declares monthly as the time variable for time-series analysis in Stata.
 
-* Restrict sample to the period September 2010 to September 2015
 
-* Time series plot
+*Restricting Sample Period for Plotting
 twoway (tsline unleaded diesel in 261/321), ytitle(Price of Unleaded Petrol and ///
 Diesel) ttitle(Month) /// 
 title(Price of Unleaded Petrol and Diesel Sept 2010 to Sept 2015)
 
-* Create log version of the variables
-
+* Creating Logarithmic Transformations of Variables
 gen lnunleaded = log(unleaded)
 gen lndiesel = log(diesel)
 gen lncrude = log(crude)
+*Log transformations help stabilize variance and allow interpretation of percentage changes
 
-* In Workshop 5 we established that log of unleaded petrol prices and the log of
-* diesel prices were cointegrated whereas the log of unleaded petrol prices and
-* the log of crude oil prices was not.  The appropriate model to estimate in 
-* order to determine whether and the form of Granger causality will therefore 
-* differ
-
-* Since only the first relationship is cointegrated we only need to include the
-* first lag of the residuals when estimate the dynamic model associated with 
-* log unleaded with log diesel.
-
+*The comments summarize findings from Workshop 5, noting that lnunleaded and lndiesel were found to be cointegrated, while lnunleaded and lncrude were not. This information guides the subsequent analysis of Granger causality.
+*Cointegration Model for lnunleaded and lndiesel
 regress lnunleaded lndiesel in 261/321
-
 predict resa in 261/321, residuals
+*regress lnunleaded lndiesel in 261/321: Runs a cointegration regression of lnunleaded on lndiesel over observations 261 to 321.
+*predict resa in 261/321, residuals: Saves the residuals as resa, which represent deviations from the equilibrium relationship between lnunleaded and lndiesel. These residuals will be used in the Granger causality analysis.
 
 
-* Granger causality (log unleaded and log diesel)
-
+*Granger Causality Test for lnunleaded and lndiesel with Lags 6 to 11
 forvalues lags = 6/11 {
 				eststo m`lags': regress D.lnunleaded L(1/`lags').D.lnunleaded L(1/`lags').D.lndiesel L.resa in 261/321
 				}
@@ -612,25 +594,17 @@ forvalues lags = 1/5 {
 				eststo m`lags': regress D.lnunleaded L(1/`lags').D.lnunleaded L(1/`lags').D.lndiesel L.resa in 261/321
 				}
 				esttab m1 m2 m3 m4 m5
-	
+*Allows comparison across different lag structures	
 
-* Optimal lag length using sequential t-test may vary depending on approach used
-* Here optimal appears to be 9 
-
+*Testing for Optimal Lag Length (Granger Causality)
 regress    D.lnunleaded L(1/9).D.lnunleaded L(1/9).D.lndiesel L.resa in 261/321
 testparm L(1/9).D.lndiesel L.resa 
  
-	
-	
-* For the reverse, we should re-estimate the regression model with lndiesel as
-* the dependent variable and lnunleaded as the explanatory variable and obtain
-* the corresponding residuals. (Should also check for cointegration - left as 
-* an exercise for you to do)
-
+*Reverse Granger Causality Test (with lndiesel as Dependent Variable)
 regress lndiesel lnunleaded in 261/321
-
 predict resa1 in 261/321, residuals
 
+*Reverse Granger Causality Test with Lags 6 to 11
 forvalues lags = 6/11 {
 				eststo m`lags': regress D.lndiesel L(1/`lags').D.lnunleaded L(1/`lags').D.lndiesel L.resa1 in 261/321
 				}
@@ -643,15 +617,12 @@ forvalues lags = 1/5 {
 				esttab m1 m2 m3 m4 m5
 	
 
-* Optimal lag length using sequential t-test may vary depending on approach used
-* Here optimal (again) appears to be 9 
-
+Testing for Optimal Lag Length (Reverse Granger Causality)
 regress    D.lndiesel L(1/9).D.lnunleaded L(1/9).D.lndiesel L.resa1 in 261/321
 testparm L(1/9).D.lnunleaded L.resa1				
 
 
-* Granger causality (log unleaded and log crude oil)
-
+* Granger Causality Test for lnunleaded and lncrude with Lags 6 to 11
 forvalues lags = 6/11 {
 				eststo m`lags': regress D.lnunleaded L(1/`lags').D.lnunleaded L(1/`lags').D.lncrude in 260/320
 				}
@@ -663,22 +634,23 @@ forvalues lags = 1/5 {
 				}
 				esttab m1 m2 m3 m4 m5
 
-* Here the optimal number of lags could be one of the following (depending on approach used)
-* 2 lags of each (although the second lag for lncrude is insignificant) 
-* or 2 lags of lnunleaded with 1 lag of lncrude 
-
+*Choosing optimal lags for Granger Causality test between lnunleaded and lncrude
 regress    D.lnunleaded L(1/2).D.lnunleaded L(1/2).D.lncrude in 260/320
+*Regresses D.lnunleaded on its own lags (L(1/2).D.lnunleaded) and the lags of D.lncrude (L(1/2).D.lncrude) over the period August 2010 to August 2015 (observations 260 to 320).
+*This specification uses 2 lags for both variables. The significance of each lag will help determine if both lags are needed for each variable.
 
 regress    D.lnunleaded L(1/2).D.lnunleaded L.D.lncrude in 260/320				
+*Regresses D.lnunleaded on 2 lags of D.lnunleaded but only one lag of D.lncrude.
+*This alternative specification is used to test if including fewer lags of D.lncrude improves the model fit and significance.
 				
-* Suppose we go with the one with 2 lags of each variable and performing the appropriate F-test
-
+*Performing F-Test for Chosen Lag Model
 regress    D.lnunleaded L(1/2).D.lnunleaded L(1/2).D.lncrude in 260/320
 testparm L(1/2).D.lncrude 
+*Runs the Granger causality test with 2 lags of both D.lnunleaded and D.lncrude.
+*testparm L(1/2).D.lncrude: Conducts an F-test to jointly test the significance of the lags of D.lncrude to see if they Granger-cause lnunleaded.
 
 
-* For the reverse relationship
-
+*Reverse Relationship: Testing if lnunleaded Granger-Causes lncrude
 forvalues lags = 6/11 {
 				eststo m`lags': regress D.lncrude L(1/`lags').D.lnunleaded L(1/`lags').D.lncrude in 260/320
 				}
@@ -690,10 +662,11 @@ forvalues lags = 1/5 {
 				}
 				esttab m1 m2 m3 m4 m5
 				
-* In this case we will go with one lag of each
-
+*Selecting Optimal Lag Length for Reverse Relationship
 regress    D.lncrude L.D.lnunleaded L.D.lncrude in 260/320
 testparm L.D.lnunleaded 
+*Regresses D.lncrude on one lag of D.lnunleaded and one lag of D.lncrude, which is identified as the optimal lag structure.
+*testparm L.D.lnunleaded: Conducts an F-test to test the joint significance of L.D.lnunleaded, verifying if lnunleaded Granger-causes lncrude
 
 				
 
