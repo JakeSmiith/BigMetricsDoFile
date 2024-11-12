@@ -1,0 +1,39 @@
+* The easiest way to set the time series variable is just to use a time trend:
+gen t=_n
+tsset t
+
+* All the time series commands like L. and D. will be correct but graphs will not show the correct dates
+* If you want to set the time series variable with the correct format, you can use the following:
+
+* Daily data starting 01/01/2000
+gen t1=td(01jan2000)+_n-1
+format t1 %td
+tsset t1
+
+* or:
+
+* Weekly data starting 01/01/2000
+gen t2=tw(2000w1)+_n-1
+format t2 %tw
+tsset t2
+
+* or:
+
+* Monthly data starting Jan 2000
+gen t3=tm(2000m1)+_n-1
+format t3 %tm
+tsset t3
+
+* or:
+
+* Quarterly data starting Q1 2000
+gen t4=tq(2000q1)+_n-1
+format t4 %tq
+tsset t4
+
+* or:
+
+* Annual data starting 2000
+gen t5=2000+_n-1
+format t5
+tsset t5
