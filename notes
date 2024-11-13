@@ -1,0 +1,154 @@
+Ripple Effect - house prices firstly move in Ldn, rest of the country follows.
+Testing for a unilateral relationship
+Will get 1 location and 2 random variables. 
+house prices 
+monthly data
+You can copy regression output for the assignment
+
+Step 1  - Looking at individual variables in log form - Determining whether they are trend stationary or different stationary. 
+Order integration only applies to different stationary
+
+gen t4=tq(1983q1)+_n-1
+format t4 %tq
+tsset t4
+twoway (tsline ea lon), ytitle(House Prices in London and East Anglia) ttitle(Month) title(House Prices in London and East Anglia from 1Q1983 to 2Q2015)
+gen lnea = log(ea)
+gen lnlon = log(lon)
+
+Schwert formula
+display 12*(n/100)^0.25
+n = number of observation
+
+Start with those number of lags
+
+Next decision - 
+Constant term, no trend
+Trend and no constant
+Neither
+
+Loops - Don't get extra marks
+
+Introuduce topic - Why it's important
+Information about 2 series. 
+
+Briefing point - Series of bullet points - Capture everything you have done - This is what we have found in terms of stationarity, cointegration etc. 
+Half a dozen bullet points
+
+coefficient l1
+t - Choose significance level - flexible but not overly restrictive
+east anglia - non stationary - couldnt reject the null at the 5% level
+How do you choose significance level
+Lonodn - cant reject 5% level - 4.137 more negative - can reject null hypothesis - stationary - because result suggests its tren
+Looking at variable 
+Trend term in model - can reject null hypothesis - suggest it's a trend series. 
+
+
+You can make assumptions - 
+
+Stationarity test on residuals - detrended
+
+You can state 'there appears to be evidence for london - trend stationary' , east anglia - 'different stationary' 
+Despite this, can assume both different stationary 
+Can do both to see if results are sensitive to the decision. 
+look in levels form
+First difference, not a trend 
+Until last lag becomes significant
+
+Different stationary - Plot london first diffeence - look to see if trend
+reset - look at plot each time
+Look at how close the test statistic is to 5% - 
+
+2nd difference - d2 - differenced twice to make stationary
+Sensitivity analysis 
+1% level - both series are i2
+
+
+Presentation of the results >> 
+Top - write associated equation, and hypothesis you are testing
+For each output - equation
+Condensed table - what we found- levels form (intercept and trend\), intercept only (levels, first difference , seocnd difference)
+
+structure of briefing paper / hints and tricks of data
+i1 - stronger evidence i2 if assuming different stationary. - Change structure of granger causality test. 
+
+Same - Add-in stata
+Installer
+
+Order of integration
+As a reference point - whether the difference 
+1) Go to original regression in levels form, get residuals from model
+2) Test for stationarity on residuals - Is the difference in time similar? 
+egranger 
+
+value less - Can't reject - Residuals are non-stationary - not cointegrated rules out error correction models (ECM)
+Only decision - optimum number of lags - reset 
+
+Granger Causality
+2 sets of variables when deciding the lag legnth
+Until the last lag of either is significant (least restrictive)
+Test until 1 is significant, continue to test on the other
+Test until both is significant (most restrictive)
+Test - Robustness Sensitivity Analysis
+
+Decision of all data, or subsets of data
+full sample - everything appropriately - good
+exceptional - robustness
+Looking at different decisions on choosing lag length
+How you're using data
+
+Logic behind this, timeframe
+1995 - 2024
+
+Background - Why topic is important
+2 regions you're looking - what the hypothesis might be 
+
+Granger Causality
+i1 -test with 13 lags
+How can we tell which variable against each other - 2 equations
+One with one way, then the other way
+Drop lags until it becomes significant. 
+(refer to line 89)
+
+significance level the entire time - Ftest
+Once decided lag length - testparm - looking at whether lag values of london influence east anglia
+Flip it over for the reverse F test 
+Past values of east anglia on current values of london - Cant reject the null  - 
+
+Swap as dependent variable on explanatory vairbale
+Lag variable - explanatory
+Dependent - current prices. 
+
+Ripple Effect -based on X , we might think Y#
+
+
+Briefing paper
+
+Using this to introduce topic - What are you going to investigate
+Why is this important? Why should we care - Say something about 2 regions - size, located, geographical positioning - wikipedia - set up potential hypothesis
+
+Grouped together
+Proximity
+One's bigger than the other 
+
+Very different size - 
+Bigger, smaller - unidirectional - flow from one to the other rather than the other
+Population flow between
+First 2 pages - Overview / key finding - Exactly what we were doing
+Remainder of briefing
+
+How you're going to split up
+Overview
+Key findings
+Output - Summarise some of it and explained it correctly - easier for reader
+Brief discussion of what youve found in the set
+Stata commands
+
+Disucssion - presentation marks 
+60% - analysis - what ive done is appropriate
+
+Originality - how you can use the data
+
+
+How are you going to slice the data? 
+Early 2000s Boom
+Pandemic Surge (2020–2022)
