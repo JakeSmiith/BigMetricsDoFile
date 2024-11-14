@@ -1,0 +1,24 @@
+import delimited "C:\Users\jakes\Downloads\HousingRegions.csv"
+keep date bolton manchester
+gen monthly = tm(1995m1) + _n - 1
+format monthly %tmMon_CCYY
+tsset monthly
+
+*Plot, ln plots
+twoway (tsline bolton, lcolor(red)) (tsline manchester, lcolor(blue)), ytitle(House Prices in Bolton and Manchester (£), margin(right)) ttitle(Month) title(House prices in Bolton and Manchester (January 1995 - July 2024), color(black) size(mediumlarge)) plotregion(margin(zero)) xlabel(, labsize(vsmall)) ylabel(, labsize(vsmall) angle(0)) legend(region(lcolor(none))) name(absolute_plot, replace)
+gen lnbolton = log(bolton)
+gen lnmanchester = log(manchester)
+twoway (tsline lnbolton, lcolor(red)) (tsline lnmanchester, lcolor(blue)), ytitle(House Prices in Bolton and Manchester (£), margin(right)) ttitle(Month) title(House prices in Bolton and Manchester (January 1995 - July 2024), color(black) size(mediumlarge)) plotregion(margin(zero)) xlabel(, labsize(vsmall)) ylabel(, labsize(vsmall) angle(0)) legend(region(lcolor(none))) name(logarithmic_plot, replace)
+
+*First difference - What is the monthly change?
+gen d_bolton = D.bolton
+gen d_manchester = D.manchester
+twoway (tsline d_bolton, lcolor(red)) (tsline d_manchester, lcolor(blue)), ytitle(First Difference of House Prices in Bolton and Manchester (£), margin(right)) ttitle(Month) title(US First Difference of House Prices in Bolton and Manchester (January 1995 - July 2024), color(black) size(mediumlarge)) plotregion(margin(zero)) xlabel(, labsize(vsmall)) ylabel(, labsize(vsmall) angle(0)) legend(region(lcolor(none))) name(first_difference_plot, replace)
+*Structural breakpoint - Less volatility versus more volatility (GFC [150th obs])
+gen d_lnbolton = D.lnbolton
+gen d_lnmanchester = D.lnmanchester
+twoway (tsline d_lnbolton, lcolor(red)) (tsline d_lnmanchester, lcolor(blue)), ytitle(First Difference of House Prices in Bolton and Manchester (£), margin(right)) ttitle(Month) title(US First Difference of House Prices in Bolton and Manchester (January 1995 - July 2024), color(black) size(mediumlarge)) plotregion(margin(zero)) xlabel(, labsize(vsmall)) ylabel(, labsize(vsmall) angle(0)) legend(region(lcolor(none))) name(breakpoint_plot, replace)
+
+*ADF Tests - Stationarity
+display 12*(355/100)^0.25
+*Constant and Trend due to nature of house prices - 
