@@ -1,0 +1,19 @@
+*CV 
+
+dfuller D.bolton in 1/149, trend regress lags(9) /// 0.000 -2.431 - 2nd
+dfuller D.bolton in 150/355, trend regress lags(9) /// 0.014 -4.430 - 1%
+dfuller D.lnbolton in 1/149, trend regress lags(9) /// 0.000 -2.315 - 2nd
+dfuller D.lnbolton in 150/355, trend regress lags(17) /// 0.05 -3.994 - 5%, marginally below 1%
+dfuller D.manchester in 1/149, trend regress lags(13) /// 0.039 -1.552 - 2nd
+dfuller D.manchester in 150/355, trend regress lags(12) /// 0.022 -3.377 - 10%
+dfuller D.lnmanchester in 1/149, trend regress lags(10) /// 0.001 -2.722 - 2nd
+dfuller D.lnmanchester in 150/355, trend regress lags(12) /// 0.014 -3.273 - 10%
+dfuller D.bolton in 1/149, trend regress lags(9) /// 0.000 -2.431 - 2nd
+dfuller D.bolton in 150/307, trend regress lags(17) /// 0.040 -3.727 - 5%
+dfuller D.bolton in 308/355, trend regress lags(2) /// 0.012 -4.582 - 1%
+dfuller D.lnbolton in 1/149, trend regress lags(9) /// 0.000 -2.315 - 2nd
+dfuller D.lnbolton in 150/307, trend regress lags(17) /// 0.039 -3.663 - 5%
+dfuller D.lnbolton in 308/355, trend regress lags(2) /// 0.009 -4.686 - 1%
+dfuller D.manchester in 1/149, trend regress lags(13) /// 0.039 -1.552 - 2nd
+dfuller D.manchester in 150/307, trend regress lags(9) /// 0.000 -3.456 - 5% marginal
+dfuller D.manchester in 308/355, trend regress lags(10) /// 0.019 -2.791 - 2nd
