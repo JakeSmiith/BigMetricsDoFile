@@ -335,5 +335,69 @@ dfuller D.lnmanchester in 308/355, trend regress lags(11)
 dfuller D.lnmanchester in 308/355, trend regress lags(10) /// 0.010 -2.885
 
 *Second Difference
+dfuller D2.bolton in 1/149, trend regress lags(17) 
+dfuller D2.bolton in 1/149, trend regress lags(16) 
+dfuller D2.bolton in 1/149, trend regress lags(15) 
+dfuller D2.bolton in 1/149, trend regress lags(14) 
+dfuller D2.bolton in 1/149, trend regress lags(13) 
+dfuller D2.bolton in 1/149, trend regress lags(12) 
+dfuller D2.bolton in 1/149, trend regress lags(11) /// 0.023 -6.444
 
+dfuller D2.lnbolton in 1/149, trend regress lags(17) 
+dfuller D2.lnbolton in 1/149, trend regress lags(16) 
+dfuller D2.lnbolton in 1/149, trend regress lags(15) 
+dfuller D2.lnbolton in 1/149, trend regress lags(14) 
+dfuller D2.lnbolton in 1/149, trend regress lags(13) 
+dfuller D2.lnbolton in 1/149, trend regress lags(12) 
+dfuller D2.lnbolton in 1/149, trend regress lags(11) 
+dfuller D2.lnbolton in 1/149, trend regress lags(10) 
+dfuller D2.lnbolton in 1/149, trend regress lags(9) 
+dfuller D2.lnbolton in 1/149, trend regress lags(8) /// 0.000 -8.286
+
+dfuller D2.manchester in 1/149, trend regress lags(17)
+dfuller D2.manchester in 1/149, trend regress lags(16)
+dfuller D2.manchester in 1/149, trend regress lags(15)
+dfuller D2.manchester in 1/149, trend regress lags(14)
+dfuller D2.manchester in 1/149, trend regress lags(13)
+dfuller D2.manchester in 1/149, trend regress lags(12) /// 0.012 -7.416
+
+dfuller D2.lnmanchester in 1/149, trend regress lags(17)
+dfuller D2.lnmanchester in 1/149, trend regress lags(16)
+dfuller D2.lnmanchester in 1/149, trend regress lags(15)
+dfuller D2.lnmanchester in 1/149, trend regress lags(14)
+dfuller D2.lnmanchester in 1/149, trend regress lags(13)
+dfuller D2.lnmanchester in 1/149, trend regress lags(12)
+dfuller D2.lnmanchester in 1/149, trend regress lags(11)
+dfuller D2.lnmanchester in 1/149, trend regress lags(10)
+dfuller D2.lnmanchester in 1/149, trend regress lags(9) /// 0.000 -10.411
+
+dfuller D2.bolton in 1/149, trend regress lags(17)
+dfuller D2.bolton in 1/149, trend regress lags(16)
+dfuller D2.bolton in 1/149, trend regress lags(15)
+dfuller D2.bolton in 1/149, trend regress lags(14)
+dfuller D2.bolton in 1/149, trend regress lags(13)
+dfuller D2.bolton in 1/149, trend regress lags(12)
+dfuller D2.bolton in 1/149, trend regress lags(11) /// 0.023 -6.444
+
+dfuller D2.manchester in 308/355, trend regress lags(17)
+dfuller D2.manchester in 308/355, trend regress lags(16)
+dfuller D2.manchester in 308/355, trend regress lags(15)
+dfuller D2.manchester in 308/355, trend regress lags(14)
+dfuller D2.manchester in 308/355, trend regress lags(13)
+dfuller D2.manchester in 308/355, trend regress lags(12)
+dfuller D2.manchester in 308/355, trend regress lags(11)
+dfuller D2.manchester in 308/355, trend regress lags(10)
+dfuller D2.manchester in 308/355, trend regress lags(9)
+dfuller D2.manchester in 308/355, trend regress lags(8) /// 0.002 -5.166
+
+dfuller D2.lnmanchester in 308/355, trend regress lags(17)
+dfuller D2.lnmanchester in 308/355, trend regress lags(16)
+dfuller D2.lnmanchester in 308/355, trend regress lags(15)
+dfuller D2.lnmanchester in 308/355, trend regress lags(14)
+dfuller D2.lnmanchester in 308/355, trend regress lags(13)
+dfuller D2.lnmanchester in 308/355, trend regress lags(12)
+dfuller D2.lnmanchester in 308/355, trend regress lags(11)
+dfuller D2.lnmanchester in 308/355, trend regress lags(10)
+dfuller D2.lnmanchester in 308/355, trend regress lags(9)
+dfuller D2.lnmanchester in 308/355, trend regress lags(8) /// 0.002 -5.059
 
