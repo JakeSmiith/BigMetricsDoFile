@@ -371,14 +371,6 @@ dfuller D2.lnmanchester in 1/149, trend regress lags(11)
 dfuller D2.lnmanchester in 1/149, trend regress lags(10)
 dfuller D2.lnmanchester in 1/149, trend regress lags(9) /// 0.000 -10.411
 
-dfuller D2.bolton in 1/149, trend regress lags(17)
-dfuller D2.bolton in 1/149, trend regress lags(16)
-dfuller D2.bolton in 1/149, trend regress lags(15)
-dfuller D2.bolton in 1/149, trend regress lags(14)
-dfuller D2.bolton in 1/149, trend regress lags(13)
-dfuller D2.bolton in 1/149, trend regress lags(12)
-dfuller D2.bolton in 1/149, trend regress lags(11) /// 0.023 -6.444
-
 dfuller D2.manchester in 308/355, trend regress lags(17)
 dfuller D2.manchester in 308/355, trend regress lags(16)
 dfuller D2.manchester in 308/355, trend regress lags(15)
@@ -449,10 +441,29 @@ dfuller res6, noconstant regress lags(13)
 dfuller res6, noconstant regress lags(12) /// -3.049
 
 *Cointegrating (using "optimal" lag level)
-*pre/post gfc
-
-
 *Possibility of overfitting
+*pre, post GFC
+varsoc D.bolton D.manchester in 150/355
+egranger bolton manchester in 150/355, lags(4) regress
+varsoc D.lnbolton D.lnmanchester in 150/355
+egranger lnbolton lnmanchester in 150/355, lags(4) regress
+
+*pre, post GFC, post Covid
+egranger bolton manchester in 1/149, lags(8) regress /// 3.035 marginally below 10%
+egranger bolton manchester in 150/355, lags(16) regress /// -1.369
+egranger lnbolton lnmanchester in 1/149, lags(11) regress /// -2.498 - not significant
+egranger lnbolton lnmanchester in 150/355, lags(16) regress /// -1.392
+egranger bolton manchester in 150/307, lags(12) regress /// 3.249 10%
+egranger lnbolton lnmanchester in 150/307, lags(12) regress ///3.049 marginally below 10%
+
+varsoc D2.bolton D2.manchester in 1/149
+egranger bolton manchester in 1/149, lags(4) regress /// -3.02
+varsoc D.bolton D.manchester in 150/307
+egranger bolton manchester in 150/307, lags(4) regress /// -2.878
+varsoc D2.lnbolton D2.manchester in 1/149
+egranger lnbolton lnmanchester in 1/149, lags(4) regress /// -2.754
+varsoc D.lnbolton D.lnmanchester in 150/307
+egranger lnbolton lnmanchester in 150/307, lags(4) regress /// -2.679
 
 egranger bolton manchester in 1/149, lags(0) regress
 egranger bolton manchester in 150/355, lags(0) regress
@@ -470,4 +481,55 @@ egranger bolton manchester in 150/307, lags(2) regress /// -2.567
 egranger lnbolton lnmanchester in 150/307, lags(2) regress ///-2.499
 
 *ECM
-egranger lnbolton lnmanchester in 1/149, lags(2) regress /// -3.770 5%
+*bolton, manchester in 1/149
+regress D2.bolton D2.manchester L(1/8).D2.bolton L(1/8).D2.manchester L.res1 in 1/149 
+regress D2.bolton D2.manchester L(1/7).D2.bolton L(1/7).D2.manchester L.res1 in 1/149  
+regress D2.bolton D2.manchester L(1/2).D2.bolton L(1/2).D2.manchester L.res1 in 1/149 
+
+*lnbolton, lnmanchester in 1/149
+regress D2.lnbolton D2.lnmanchester L(1/11).D2.lnbolton L(1/11).D2.lnmanchester L.res3
+regress D2.lnbolton D2.lnmanchester L(1/10).D2.lnbolton L(1/10).D2.lnmanchester L.res3
+regress D2.lnbolton D2.lnmanchester L(1/9).D2.lnbolton L(1/9).D2.lnmanchester L.res3
+regress D2.lnbolton D2.lnmanchester L(1/8).D2.lnbolton L(1/8).D2.lnmanchester L.res3
+regress D2.lnbolton D2.lnmanchester L(1/7).D2.lnbolton L(1/7).D2.lnmanchester L.res3
+regress D2.lnbolton D2.lnmanchester L(1/6).D2.lnbolton L(1/6).D2.lnmanchester L.res3
+regress D2.lnbolton D2.lnmanchester L(1/5).D2.lnbolton L(1/5).D2.lnmanchester L.res3
+regress D2.lnbolton D2.lnmanchester L(1/4).D2.lnbolton L(1/4).D2.lnmanchester L.res3
+regress D2.lnbolton D2.lnmanchester L(1/2).D2.lnbolton L(1/2).D2.lnmanchester L.res3
+
+*5 bolton manchester in 150/307
+regress D.bolton D.manchester L(1/12).D.bolton L(1/12).D.manchester L.res5
+regress D.bolton D.manchester L(1/11).D.bolton L(1/11).D.manchester L.res5
+regress D.bolton D.manchester L(1/10).D.bolton L(1/10).D.manchester L.res5
+regress D.bolton D.manchester L(1/9).D.bolton L(1/9).D.manchester L.res5
+regress D.bolton D.manchester L(1/8).D.bolton L(1/8).D.manchester L.res5
+regress D.bolton D.manchester L(1/7).D.bolton L(1/7).D.manchester L.res5
+regress D.bolton D.manchester L(1/6).D.bolton L(1/6).D.manchester L.res5
+regress D.bolton D.manchester L(1/5).D.bolton L(1/5).D.manchester L.res5
+regress D.bolton D.manchester L(1/4).D.bolton L(1/4).D.manchester L.res5
+
+*6 lnbolton lnmanchester in 150/307
+regress D.lnbolton D.lnmanchester L(1/12).D.lnbolton L(1/12).D.lnmanchester L.res6
+regress D.lnbolton D.lnmanchester L(1/11).D.lnbolton L(1/11).D.lnmanchester L.res6
+regress D.lnbolton D.lnmanchester L(1/10).D.lnbolton L(1/10).D.lnmanchester L.res6
+regress D.lnbolton D.lnmanchester L(1/9).D.lnbolton L(1/9).D.lnmanchester L.res6
+regress D.lnbolton D.lnmanchester L(1/8).D.lnbolton L(1/8).D.lnmanchester L.res6
+regress D.lnbolton D.lnmanchester L(1/7).D.lnbolton L(1/7).D.lnmanchester L.res6
+regress D.lnbolton D.lnmanchester L(1/6).D.lnbolton L(1/6).D.lnmanchester L.res6
+regress D.lnbolton D.lnmanchester L(1/2).D.lnbolton L(1/2).D.lnmanchester L.res6
+regress D.lnbolton D.lnmanchester L(1/1).D.lnbolton L(1/1).D.lnmanchester L.res6
+
+*Granger Causality
+D2.bolton(12) D2.manchester in 1/149(11)
+regress D.bolton L(1/12).D.bolton L(1/12).D.manchester(1/11) in 1/149
+bolton(14) manchester in 150/355(13)
+bolton(14) manchester in 150/307(9)
+bolton(1) D2.manchester in 308/355(8)
+
+lnbolton(8) lnmanchester in 1/149(9)
+lnbolton(14) lnmanchester in 150/355(12)
+lnbolton(14) lnmanchester in 150/307(9)
+lnbolton(3) D2.lnmanchester in 308/355(8)
+
+*How optimal lag length
+*ADF - 
