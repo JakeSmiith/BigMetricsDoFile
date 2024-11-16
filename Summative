@@ -401,3 +401,73 @@ dfuller D2.lnmanchester in 308/355, trend regress lags(10)
 dfuller D2.lnmanchester in 308/355, trend regress lags(9)
 dfuller D2.lnmanchester in 308/355, trend regress lags(8) /// 0.002 -5.059
 
+*Predicting residuals, testing for co-integration
+regress bolton manchester in 1/149
+predict res1 in 1/149, residuals
+dfuller res1, noconstant regress lags(17)
+dfuller res1, noconstant regress lags(16)
+dfuller res1, noconstant regress lags(15)
+dfuller res1, noconstant regress lags(14)
+dfuller res1, noconstant regress lags(13)
+dfuller res1, noconstant regress lags(12)
+dfuller res1, noconstant regress lags(11)
+dfuller res1, noconstant regress lags(10)
+dfuller res1, noconstant regress lags(9)
+dfuller res1, noconstant regress lags(8) ///-3.035
+regress bolton manchester in 150/355
+predict res2 in 150/355, residuals
+dfuller res2, noconstant regress lags(17)
+dfuller res2, noconstant regress lags(16) /// -1.369
+regress lnbolton lnmanchester in 1/149
+predict res3 in 1/149, residuals
+dfuller res3, noconstant regress lags(17)
+dfuller res3, noconstant regress lags(16)
+dfuller res3, noconstant regress lags(15)
+dfuller res3, noconstant regress lags(14)
+dfuller res3, noconstant regress lags(13)
+dfuller res3, noconstant regress lags(12)
+dfuller res3, noconstant regress lags(11) /// -2.09
+regress lnbolton lnmanchester in 150/355
+predict res4 in 150/355, residuals
+dfuller res4, noconstant regress lags(17)
+dfuller res4, noconstant regress lags(16) /// -1.392
+regress bolton manchester in 150/307
+predict res5 in 150/307, residuals
+dfuller res5, noconstant regress lags(17)
+dfuller res5, noconstant regress lags(16)
+dfuller res5, noconstant regress lags(15)
+dfuller res5, noconstant regress lags(14)
+dfuller res5, noconstant regress lags(13)
+dfuller res5, noconstant regress lags(12) /// -3.249
+regress lnbolton lnmanchester in 150/307
+predict res6 in 150/307, residuals
+dfuller res6, noconstant regress lags(17)
+dfuller res6, noconstant regress lags(16)
+dfuller res6, noconstant regress lags(15)
+dfuller res6, noconstant regress lags(14)
+dfuller res6, noconstant regress lags(13)
+dfuller res6, noconstant regress lags(12) /// -3.049
+
+*Cointegrating (using "optimal" lag level)
+*pre/post gfc
+
+
+*Possibility of overfitting
+
+egranger bolton manchester in 1/149, lags(0) regress
+egranger bolton manchester in 150/355, lags(0) regress
+egranger lnbolton lnmanchester in 1/149, lags(0) regress
+egranger lnbolton lnmanchester in 150/355, lags(0) regress
+egranger bolton manchester in 150/307, lags(0) regress
+egranger lnbolton lnmanchester in 150/307, lags(0) regress
+
+*Possibility of underfitting - 2-lag model
+egranger bolton manchester in 1/149, lags(2) regress /// -3.977 1%
+egranger bolton manchester in 150/355, lags(2) regress /// -2.118
+egranger lnbolton lnmanchester in 1/149, lags(2) regress /// -3.770 5%
+egranger lnbolton lnmanchester in 150/355, lags(2) regress /// -1.878
+egranger bolton manchester in 150/307, lags(2) regress /// -2.567
+egranger lnbolton lnmanchester in 150/307, lags(2) regress ///-2.499
+
+*ECM
+egranger lnbolton lnmanchester in 1/149, lags(2) regress /// -3.770 5%
