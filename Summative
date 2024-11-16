@@ -520,16 +520,50 @@ regress D.lnbolton D.lnmanchester L(1/2).D.lnbolton L(1/2).D.lnmanchester L.res6
 regress D.lnbolton D.lnmanchester L(1/1).D.lnbolton L(1/1).D.lnmanchester L.res6
 
 *Granger Causality
-D2.bolton(12) D2.manchester in 1/149(11)
-regress D.bolton L(1/12).D.bolton L(1/12).D.manchester(1/11) in 1/149
-bolton(14) manchester in 150/355(13)
-bolton(14) manchester in 150/307(9)
-bolton(1) D2.manchester in 308/355(8)
+/// D2.bolton(12) D2.manchester in 1/149(11) res1
+regress D2.bolton L(1/17).D2.bolton L(1/17).D2.manchester L.res1 in 1/149 
+forvalues lags = 12/17 {
+				eststo m`lags': regress D2.bolton L(1/`lags').D2.bolton L(1/`lags').D2.manchester L.res1 in 1/149
+				}
+				esttab m12 m13 m14 m15 m16 m17
+regress D2.bolton L(1/14).D2.bolton L(1/14).D2.manchester L.res1 in 1/149 
+regress D2.bolton L(1/12).D2.bolton L(1/14).D2.manchester L.res1 in 1/149 
+regress D2.bolton L(1/12).D2.bolton L(1/12).D2.manchester L.res1 in 1/149 
 
-lnbolton(8) lnmanchester in 1/149(9)
-lnbolton(14) lnmanchester in 150/355(12)
-lnbolton(14) lnmanchester in 150/307(9)
-lnbolton(3) D2.lnmanchester in 308/355(8)
+testparm L(1/12).D2.manchester L.res1
+
+
+/// bolton(14) manchester in 150/355(13) res2
+regress D.bolton L(1/14).D.bolton L(1/14).D.manchester L.res2 in 150/355
+regress D.bolton L(1/14).D.bolton L(1/13).D.manchester L.res2 in 150/355
+regress D.bolton L(1/13).D.bolton L(1/13).D.manchester L.res2 in 150/355
+
+/// bolton(14) manchester in 150/307(9) res5
+regress D.bolton L(1/14).D.bolton L(1/14).D.manchester L.res5 in 150/307
+regress D.bolton L(1/14).D.bolton L(1/9).D.manchester L.res5 in 150/307
+regress D.bolton L(1/9).D.bolton L(1/9).D.manchester L.res5 in 150/307
+
+/// bolton(1) D2.manchester in 308/355(8)
+regress D.bolton L(8/8).D.bolton L(1/8).D2.manchester in 308/355
+regress D.bolton L(1/1).D.bolton L(1/8).D2.manchester in 308/355
+regress D.bolton L(1/1).D.bolton L(1/1).D2.manchester in 308/355
+
+/// D2.lnbolton(8) D2.lnmanchester in 1/149(9) res3
+regress D2.lnbolton L(1/9).D.bolton L(1/9).D2.manchester L.res3 in 1/149
+regress D2.lnbolton L(1/8).D.bolton L(1/9).D.manchester L.res3 in 1/149
+regress D2.lnbolton L(1/8).D.bolton L(1/8).D.manchester L.res3 in 1/149
+
+/// lnbolton(14) lnmanchester in 150/355(12) res4
+regress D.lnbolton L(1/14).D.lnbolton L(1/14).D.manchester L.res4 in 150/355
+regress D.lnbolton L(1/14).D.lnbolton L(1/12).D.manchester L.res4 in 150/355
+regress D.lnbolton L(1/12).D.lnbolton L(1/12).D.manchester L.res4 in 150/355
+
+/// lnbolton(14) lnmanchester in 150/307(9) res6
+regress D.lnbolton L(1/14).D.lnbolton L(1/14).D.lnmanchester L.res6 in 150/307
+regress D.lnbolton L(1/14).D.lnbolton L(1/9).D.lnmanchester L.res6 in 150/307
+regress D.lnbolton L(1/9).D.lnbolton L(1/9).D.lnmanchester L.res6 in 150/307
+
+/// lnbolton(3) D2.lnmanchester in 308/355(8)
 
 *How optimal lag length
 *ADF - 
