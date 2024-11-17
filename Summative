@@ -80,12 +80,6 @@ dfuller lnmanchester in 150/355, trend regress lags(13)
 /// 0.006 -2.718
 
 *Pre, post GFC and post-pandemic 2
-dfuller bolton in 1/149, trend regress lags(17)
-dfuller bolton in 1/149, trend regress lags(16)
-dfuller bolton in 1/149, trend regress lags(15)
-dfuller bolton in 1/149, trend regress lags(14)
-dfuller bolton in 1/149, trend regress lags(13)
-/// 0.039 -1.585
 dfuller bolton in 150/307, trend regress lags(17)
 dfuller bolton in 150/307, trend regress lags(16)
 dfuller bolton in 150/307, trend regress lags(15)
