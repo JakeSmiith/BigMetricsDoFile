@@ -29,11 +29,13 @@ dfuller bolton in 1/149, trend regress lags(17)
 dfuller bolton in 1/149, trend regress lags(16)
 dfuller bolton in 1/149, trend regress lags(15)
 dfuller bolton in 1/149, trend regress lags(14)
-dfuller bolton in 1/149, trend regress lags(13) ///0.038 -1.585
+dfuller bolton in 1/149, trend regress lags(13)
+///0.038 -1.585
 dfuller bolton in 150/355, trend regress lags(17)
 dfuller bolton in 150/355, trend regress lags(16)
 dfuller bolton in 150/355, trend regress lags(15)
-dfuller bolton in 150/355, trend regress lags(14) ///0.047 -1.786
+dfuller bolton in 150/355, trend regress lags(14)
+///0.047 -1.786
 
 dfuller lnbolton in 1/149, trend regress lags(17)
 dfuller lnbolton in 1/149, trend regress lags(16)
@@ -42,21 +44,25 @@ dfuller lnbolton in 1/149, trend regress lags(14)
 dfuller lnbolton in 1/149, trend regress lags(13)
 dfuller lnbolton in 1/149, trend regress lags(12)
 dfuller lnbolton in 1/149, trend regress lags(11)
-dfuller lnbolton in 1/149, trend regress lags(10) ///0.000 -1.678
+dfuller lnbolton in 1/149, trend regress lags(10)
+///0.000 -1.678
 dfuller lnbolton in 150/355, trend regress lags(17)
 dfuller lnbolton in 150/355, trend regress lags(16)
 dfuller lnbolton in 150/355, trend regress lags(15)
-dfuller lnbolton in 150/355, trend regress lags(14) /// 0.011 -2.316
+dfuller lnbolton in 150/355, trend regress lags(14)
+/// 0.011 -2.316
 
 dfuller manchester in 1/149, trend regress lags(17)
 dfuller manchester in 1/149, trend regress lags(16)
 dfuller manchester in 1/149, trend regress lags(15)
-dfuller manchester in 1/149, trend regress lags(14) /// 0.024 -1.328
+dfuller manchester in 1/149, trend regress lags(14)
+/// 0.024 -1.328
 dfuller manchester in 150/355, trend regress lags(17)
 dfuller manchester in 150/355, trend regress lags(16)
 dfuller manchester in 150/355, trend regress lags(15)
 dfuller manchester in 150/355, trend regress lags(14)
-dfuller manchester in 150/355, trend regress lags(13) /// 0.013 -2.233
+dfuller manchester in 150/355, trend regress lags(13)
+/// 0.013 -2.233
 
 dfuller lnmanchester in 1/149, trend regress lags(17)
 dfuller lnmanchester in 1/149, trend regress lags(16)
@@ -64,23 +70,27 @@ dfuller lnmanchester in 1/149, trend regress lags(15)
 dfuller lnmanchester in 1/149, trend regress lags(14)
 dfuller lnmanchester in 1/149, trend regress lags(13)
 dfuller lnmanchester in 1/149, trend regress lags(12)
-dfuller lnmanchester in 1/149, trend regress lags(11) /// 0.001 -1.662
+dfuller lnmanchester in 1/149, trend regress lags(11)
+/// 0.001 -1.662
 dfuller lnmanchester in 150/355, trend regress lags(17)
 dfuller lnmanchester in 150/355, trend regress lags(16)
 dfuller lnmanchester in 150/355, trend regress lags(15)
 dfuller lnmanchester in 150/355, trend regress lags(14)
-dfuller lnmanchester in 150/355, trend regress lags(13) /// 0.006 -2.718
+dfuller lnmanchester in 150/355, trend regress lags(13)
+/// 0.006 -2.718
 
 *Pre, post GFC and post-pandemic 2
 dfuller bolton in 1/149, trend regress lags(17)
 dfuller bolton in 1/149, trend regress lags(16)
 dfuller bolton in 1/149, trend regress lags(15)
 dfuller bolton in 1/149, trend regress lags(14)
-dfuller bolton in 1/149, trend regress lags(13) /// 0.039 -1.585
+dfuller bolton in 1/149, trend regress lags(13)
+/// 0.039 -1.585
 dfuller bolton in 150/307, trend regress lags(17)
 dfuller bolton in 150/307, trend regress lags(16)
 dfuller bolton in 150/307, trend regress lags(15)
-dfuller bolton in 150/307, trend regress lags(14) /// 0.026 -2.221
+dfuller bolton in 150/307, trend regress lags(14)
+/// 0.026 -2.221
 dfuller bolton in 308/355, trend regress lags(17)
 dfuller bolton in 308/355, trend regress lags(16)
 dfuller bolton in 308/355, trend regress lags(15)
@@ -97,7 +107,8 @@ dfuller bolton in 308/355, trend regress lags(5)
 dfuller bolton in 308/355, trend regress lags(4)
 dfuller bolton in 308/355, trend regress lags(3)
 dfuller bolton in 308/355, trend regress lags(2)
-dfuller bolton in 308/355, trend regress lags(1) /// 0.022 -1.954
+dfuller bolton in 308/355, trend regress lags(1)
+/// 0.022 -1.954
 
 dfuller lnbolton in 1/149, trend regress lags(17)
 dfuller lnbolton in 1/149, trend regress lags(16)
@@ -106,11 +117,13 @@ dfuller lnbolton in 1/149, trend regress lags(14)
 dfuller lnbolton in 1/149, trend regress lags(13)
 dfuller lnbolton in 1/149, trend regress lags(12)
 dfuller lnbolton in 1/149, trend regress lags(11)
-dfuller lnbolton in 1/149, trend regress lags(10) /// 0.000 -1.678
+dfuller lnbolton in 1/149, trend regress lags(10)
+/// 0.000 -1.678
 dfuller lnbolton in 150/307, trend regress lags(17)
 dfuller lnbolton in 150/307, trend regress lags(16)
 dfuller lnbolton in 150/307, trend regress lags(15)
-dfuller lnbolton in 150/307, trend regress lags(14) /// 0.014 -2.315
+dfuller lnbolton in 150/307, trend regress lags(14)
+/// 0.014 -2.315
 dfuller lnbolton in 308/355, trend regress lags(17)
 dfuller lnbolton in 308/355, trend regress lags(16)
 dfuller lnbolton in 308/355, trend regress lags(15)
@@ -125,13 +138,15 @@ dfuller lnbolton in 308/355, trend regress lags(7)
 dfuller lnbolton in 308/355, trend regress lags(6)
 dfuller lnbolton in 308/355, trend regress lags(5)
 dfuller lnbolton in 308/355, trend regress lags(4)
-dfuller lnbolton in 308/355, trend regress lags(3) /// 0.054 -1.456
+dfuller lnbolton in 308/355, trend regress lags(3)
+/// 0.054 -1.456
 *When not on a trend - becomes significant
 
 dfuller manchester in 1/149, trend regress lags(17)
 dfuller manchester in 1/149, trend regress lags(16)
 dfuller manchester in 1/149, trend regress lags(15)
-dfuller manchester in 1/149, trend regress lags(14) /// 0.024 -1.328
+dfuller manchester in 1/149, trend regress lags(14)
+/// 0.024 -1.328
 dfuller manchester in 150/307, trend regress lags(17)
 dfuller manchester in 150/307, trend regress lags(16)
 dfuller manchester in 150/307, trend regress lags(15)
@@ -139,7 +154,8 @@ dfuller manchester in 150/307, trend regress lags(14)
 dfuller manchester in 150/307, trend regress lags(13)
 dfuller manchester in 150/307, trend regress lags(12)
 dfuller manchester in 150/307, trend regress lags(11)
-dfuller manchester in 150/307, trend regress lags(10) /// 0.000 -2.001
+dfuller manchester in 150/307, trend regress lags(10)
+/// 0.000 -2.001
 dfuller manchester in 308/355, trend regress lags(17)
 dfuller manchester in 308/355, trend regress lags(16)
 dfuller manchester in 308/355, trend regress lags(15)
@@ -147,7 +163,8 @@ dfuller manchester in 308/355, trend regress lags(14)
 dfuller manchester in 308/355, trend regress lags(13)
 dfuller manchester in 308/355, trend regress lags(12)
 dfuller manchester in 308/355, trend regress lags(11)
-dfuller manchester in 308/355, trend regress lags(10) /// 0.007 -1.849
+dfuller manchester in 308/355, trend regress lags(10)
+/// 0.007 -1.849
 
 dfuller lnmanchester in 1/149, trend regress lags(17)
 dfuller lnmanchester in 1/149, trend regress lags(16)
@@ -155,7 +172,8 @@ dfuller lnmanchester in 1/149, trend regress lags(15)
 dfuller lnmanchester in 1/149, trend regress lags(14)
 dfuller lnmanchester in 1/149, trend regress lags(13)
 dfuller lnmanchester in 1/149, trend regress lags(12)
-dfuller lnmanchester in 1/149, trend regress lags(11) /// 0.001 -1.662
+dfuller lnmanchester in 1/149, trend regress lags(11)
+/// 0.001 -1.662
 dfuller lnmanchester in 150/307, trend regress lags(17)
 dfuller lnmanchester in 150/307, trend regress lags(16)
 dfuller lnmanchester in 150/307, trend regress lags(15)
@@ -163,14 +181,16 @@ dfuller lnmanchester in 150/307, trend regress lags(14)
 dfuller lnmanchester in 150/307, trend regress lags(13)
 dfuller lnmanchester in 150/307, trend regress lags(12)
 dfuller lnmanchester in 150/307, trend regress lags(11)
-dfuller lnmanchester in 150/307, trend regress lags(10) /// 0.000 -2.099
+dfuller lnmanchester in 150/307, trend regress lags(10)
+/// 0.000 -2.099
 dfuller lnmanchester in 308/355, trend regress lags(17)
 dfuller lnmanchester in 308/355, trend regress lags(16)
 dfuller lnmanchester in 308/355, trend regress lags(15)
 dfuller lnmanchester in 308/355, trend regress lags(14)
 dfuller lnmanchester in 308/355, trend regress lags(13)
 dfuller lnmanchester in 308/355, trend regress lags(12)
-dfuller lnmanchester in 308/355, trend regress lags(11) /// 0.035 -1.215
+dfuller lnmanchester in 308/355, trend regress lags(11)
+/// 0.035 -1.215
 
 *Difference Stationary - First difference
 dfuller D.bolton in 1/149, trend regress lags(17)
@@ -181,7 +201,8 @@ dfuller D.bolton in 1/149, trend regress lags(13)
 dfuller D.bolton in 1/149, trend regress lags(12)
 dfuller D.bolton in 1/149, trend regress lags(11)
 dfuller D.bolton in 1/149, trend regress lags(10)
-dfuller D.bolton in 1/149, trend regress lags(9) /// 0.000 -2.431
+dfuller D.bolton in 1/149, trend regress lags(9)
+/// 0.000 -2.431
 dfuller D.bolton in 150/355, trend regress lags(17)
 dfuller D.bolton in 150/355, trend regress lags(16)
 dfuller D.bolton in 150/355, trend regress lags(15)
@@ -190,7 +211,8 @@ dfuller D.bolton in 150/355, trend regress lags(13)
 dfuller D.bolton in 150/355, trend regress lags(12)
 dfuller D.bolton in 150/355, trend regress lags(11)
 dfuller D.bolton in 150/355, trend regress lags(10)
-dfuller D.bolton in 150/355, trend regress lags(9) /// 0.014 -4.430
+dfuller D.bolton in 150/355, trend regress lags(9)
+/// 0.014 -4.430
 
 
 dfuller D.lnbolton in 1/149, trend regress lags(17)
@@ -201,20 +223,24 @@ dfuller D.lnbolton in 1/149, trend regress lags(13)
 dfuller D.lnbolton in 1/149, trend regress lags(12)
 dfuller D.lnbolton in 1/149, trend regress lags(11)
 dfuller D.lnbolton in 1/149, trend regress lags(10)
-dfuller D.lnbolton in 1/149, trend regress lags(9) /// 0.000 -2.315
-dfuller D.lnbolton in 150/355, trend regress lags(17) /// 0.05 -3.994
+dfuller D.lnbolton in 1/149, trend regress lags(9)
+/// 0.000 -2.315
+dfuller D.lnbolton in 150/355, trend regress lags(17)
+/// 0.05 -3.994
 
 dfuller D.manchester in 1/149, trend regress lags(17)
 dfuller D.manchester in 1/149, trend regress lags(16)
 dfuller D.manchester in 1/149, trend regress lags(15)
 dfuller D.manchester in 1/149, trend regress lags(14)
-dfuller D.manchester in 1/149, trend regress lags(13) /// 0.039 -1.552
+dfuller D.manchester in 1/149, trend regress lags(13)
+/// 0.039 -1.552
 dfuller D.manchester in 150/355, trend regress lags(17)
 dfuller D.manchester in 150/355, trend regress lags(16)
 dfuller D.manchester in 150/355, trend regress lags(15)
 dfuller D.manchester in 150/355, trend regress lags(14)
 dfuller D.manchester in 150/355, trend regress lags(13)
-dfuller D.manchester in 150/355, trend regress lags(12) /// 0.022 -3.377
+dfuller D.manchester in 150/355, trend regress lags(12)
+/// 0.022 -3.377
 
 dfuller D.lnmanchester in 1/149, trend regress lags(17)
 dfuller D.lnmanchester in 1/149, trend regress lags(16)
@@ -223,13 +249,15 @@ dfuller D.lnmanchester in 1/149, trend regress lags(14)
 dfuller D.lnmanchester in 1/149, trend regress lags(13)
 dfuller D.lnmanchester in 1/149, trend regress lags(12)
 dfuller D.lnmanchester in 1/149, trend regress lags(11)
-dfuller D.lnmanchester in 1/149, trend regress lags(10) /// 0.001 -2.722
+dfuller D.lnmanchester in 1/149, trend regress lags(10)
+/// 0.001 -2.722
 dfuller D.lnmanchester in 150/355, trend regress lags(17)
 dfuller D.lnmanchester in 150/355, trend regress lags(16)
 dfuller D.lnmanchester in 150/355, trend regress lags(15)
 dfuller D.lnmanchester in 150/355, trend regress lags(14)
 dfuller D.lnmanchester in 150/355, trend regress lags(13)
-dfuller D.lnmanchester in 150/355, trend regress lags(12) /// 0.014 -3.273
+dfuller D.lnmanchester in 150/355, trend regress lags(12)
+/// 0.014 -3.273
 
 dfuller D.bolton in 1/149, trend regress lags(17)
 dfuller D.bolton in 1/149, trend regress lags(16)
@@ -239,8 +267,10 @@ dfuller D.bolton in 1/149, trend regress lags(13)
 dfuller D.bolton in 1/149, trend regress lags(12)
 dfuller D.bolton in 1/149, trend regress lags(11)
 dfuller D.bolton in 1/149, trend regress lags(10)
-dfuller D.bolton in 1/149, trend regress lags(9) /// 0.000 -2.431
-dfuller D.bolton in 150/307, trend regress lags(17) /// 0.040 -3.727
+dfuller D.bolton in 1/149, trend regress lags(9)
+/// 0.000 -2.431
+dfuller D.bolton in 150/307, trend regress lags(17)
+/// 0.040 -3.727
 dfuller D.bolton in 308/355, trend regress lags(17)
 dfuller D.bolton in 308/355, trend regress lags(16)
 dfuller D.bolton in 308/355, trend regress lags(15)
@@ -256,7 +286,8 @@ dfuller D.bolton in 308/355, trend regress lags(6)
 dfuller D.bolton in 308/355, trend regress lags(5)
 dfuller D.bolton in 308/355, trend regress lags(4)
 dfuller D.bolton in 308/355, trend regress lags(3)
-dfuller D.bolton in 308/355, trend regress lags(2) /// 0.012 -4.582
+dfuller D.bolton in 308/355, trend regress lags(2)
+/// 0.012 -4.582
 
 dfuller D.lnbolton in 1/149, trend regress lags(17)
 dfuller D.lnbolton in 1/149, trend regress lags(16)
@@ -266,8 +297,10 @@ dfuller D.lnbolton in 1/149, trend regress lags(13)
 dfuller D.lnbolton in 1/149, trend regress lags(12)
 dfuller D.lnbolton in 1/149, trend regress lags(11)
 dfuller D.lnbolton in 1/149, trend regress lags(10)
-dfuller D.lnbolton in 1/149, trend regress lags(9) /// 0.000 -2.315
-dfuller D.lnbolton in 150/307, trend regress lags(17) /// 0.039 -3.663
+dfuller D.lnbolton in 1/149, trend regress lags(9)
+/// 0.000 -2.315
+dfuller D.lnbolton in 150/307, trend regress lags(17)
+/// 0.039 -3.663
 dfuller D.lnbolton in 308/355, trend regress lags(16)
 dfuller D.lnbolton in 308/355, trend regress lags(15)
 dfuller D.lnbolton in 308/355, trend regress lags(14)
@@ -282,13 +315,15 @@ dfuller D.lnbolton in 308/355, trend regress lags(6)
 dfuller D.lnbolton in 308/355, trend regress lags(5)
 dfuller D.lnbolton in 308/355, trend regress lags(4)
 dfuller D.lnbolton in 308/355, trend regress lags(3)
-dfuller D.lnbolton in 308/355, trend regress lags(2) /// 0.009 -4.686
+dfuller D.lnbolton in 308/355, trend regress lags(2)
+/// 0.009 -4.686
 
 dfuller D.manchester in 1/149, trend regress lags(17)
 dfuller D.manchester in 1/149, trend regress lags(16)
 dfuller D.manchester in 1/149, trend regress lags(15)
 dfuller D.manchester in 1/149, trend regress lags(14)
-dfuller D.manchester in 1/149, trend regress lags(13) /// 0.039 -1.552
+dfuller D.manchester in 1/149, trend regress lags(13)
+/// 0.039 -1.552
 dfuller D.manchester in 150/307, trend regress lags(17)
 dfuller D.manchester in 150/307, trend regress lags(16)
 dfuller D.manchester in 150/307, trend regress lags(15)
@@ -297,7 +332,8 @@ dfuller D.manchester in 150/307, trend regress lags(13)
 dfuller D.manchester in 150/307, trend regress lags(12)
 dfuller D.manchester in 150/307, trend regress lags(11)
 dfuller D.manchester in 150/307, trend regress lags(10)
-dfuller D.manchester in 150/307, trend regress lags(9) /// 0.000 -3.456
+dfuller D.manchester in 150/307, trend regress lags(9)
+/// 0.000 -3.456
 dfuller D.manchester in 308/355, trend regress lags(17)
 dfuller D.manchester in 308/355, trend regress lags(16)
 dfuller D.manchester in 308/355, trend regress lags(15)
@@ -305,7 +341,8 @@ dfuller D.manchester in 308/355, trend regress lags(14)
 dfuller D.manchester in 308/355, trend regress lags(13)
 dfuller D.manchester in 308/355, trend regress lags(12)
 dfuller D.manchester in 308/355, trend regress lags(11)
-dfuller D.manchester in 308/355, trend regress lags(10) /// 0.019 -2.791
+dfuller D.manchester in 308/355, trend regress lags(10)
+/// 0.019 -2.791
 
 
 dfuller D.lnmanchester in 1/149, trend regress lags(17)
@@ -315,7 +352,8 @@ dfuller D.lnmanchester in 1/149, trend regress lags(14)
 dfuller D.lnmanchester in 1/149, trend regress lags(13)
 dfuller D.lnmanchester in 1/149, trend regress lags(12)
 dfuller D.lnmanchester in 1/149, trend regress lags(11)
-dfuller D.lnmanchester in 1/149, trend regress lags(10) /// 0.001 -2.722
+dfuller D.lnmanchester in 1/149, trend regress lags(10)
+/// 0.001 -2.722
 dfuller D.lnmanchester in 150/307, trend regress lags(17)
 dfuller D.lnmanchester in 150/307, trend regress lags(16)
 dfuller D.lnmanchester in 150/307, trend regress lags(15)
@@ -324,7 +362,8 @@ dfuller D.lnmanchester in 150/307, trend regress lags(13)
 dfuller D.lnmanchester in 150/307, trend regress lags(12)
 dfuller D.lnmanchester in 150/307, trend regress lags(11)
 dfuller D.lnmanchester in 150/307, trend regress lags(10)
-dfuller D.lnmanchester in 150/307, trend regress lags(9) /// 0.000 -3.549
+dfuller D.lnmanchester in 150/307, trend regress lags(9)
+/// 0.000 -3.549
 dfuller D.lnmanchester in 308/355, trend regress lags(17)
 dfuller D.lnmanchester in 308/355, trend regress lags(16)
 dfuller D.lnmanchester in 308/355, trend regress lags(15)
@@ -332,7 +371,8 @@ dfuller D.lnmanchester in 308/355, trend regress lags(14)
 dfuller D.lnmanchester in 308/355, trend regress lags(13)
 dfuller D.lnmanchester in 308/355, trend regress lags(12)
 dfuller D.lnmanchester in 308/355, trend regress lags(11)
-dfuller D.lnmanchester in 308/355, trend regress lags(10) /// 0.010 -2.885
+dfuller D.lnmanchester in 308/355, trend regress lags(10)
+/// 0.010 -2.885
 
 *Second Difference
 dfuller D2.bolton in 1/149, trend regress lags(17) 
@@ -341,7 +381,8 @@ dfuller D2.bolton in 1/149, trend regress lags(15)
 dfuller D2.bolton in 1/149, trend regress lags(14) 
 dfuller D2.bolton in 1/149, trend regress lags(13) 
 dfuller D2.bolton in 1/149, trend regress lags(12) 
-dfuller D2.bolton in 1/149, trend regress lags(11) /// 0.023 -6.444
+dfuller D2.bolton in 1/149, trend regress lags(11)
+/// 0.023 -6.444
 
 dfuller D2.lnbolton in 1/149, trend regress lags(17) 
 dfuller D2.lnbolton in 1/149, trend regress lags(16) 
@@ -352,14 +393,16 @@ dfuller D2.lnbolton in 1/149, trend regress lags(12)
 dfuller D2.lnbolton in 1/149, trend regress lags(11) 
 dfuller D2.lnbolton in 1/149, trend regress lags(10) 
 dfuller D2.lnbolton in 1/149, trend regress lags(9) 
-dfuller D2.lnbolton in 1/149, trend regress lags(8) /// 0.000 -8.286
+dfuller D2.lnbolton in 1/149, trend regress lags(8)
+/// 0.000 -8.286
 
 dfuller D2.manchester in 1/149, trend regress lags(17)
 dfuller D2.manchester in 1/149, trend regress lags(16)
 dfuller D2.manchester in 1/149, trend regress lags(15)
 dfuller D2.manchester in 1/149, trend regress lags(14)
 dfuller D2.manchester in 1/149, trend regress lags(13)
-dfuller D2.manchester in 1/149, trend regress lags(12) /// 0.012 -7.416
+dfuller D2.manchester in 1/149, trend regress lags(12)
+/// 0.012 -7.416
 
 dfuller D2.lnmanchester in 1/149, trend regress lags(17)
 dfuller D2.lnmanchester in 1/149, trend regress lags(16)
@@ -369,7 +412,8 @@ dfuller D2.lnmanchester in 1/149, trend regress lags(13)
 dfuller D2.lnmanchester in 1/149, trend regress lags(12)
 dfuller D2.lnmanchester in 1/149, trend regress lags(11)
 dfuller D2.lnmanchester in 1/149, trend regress lags(10)
-dfuller D2.lnmanchester in 1/149, trend regress lags(9) /// 0.000 -10.411
+dfuller D2.lnmanchester in 1/149, trend regress lags(9)
+/// 0.000 -10.411
 
 dfuller D2.manchester in 308/355, trend regress lags(17)
 dfuller D2.manchester in 308/355, trend regress lags(16)
@@ -380,7 +424,8 @@ dfuller D2.manchester in 308/355, trend regress lags(12)
 dfuller D2.manchester in 308/355, trend regress lags(11)
 dfuller D2.manchester in 308/355, trend regress lags(10)
 dfuller D2.manchester in 308/355, trend regress lags(9)
-dfuller D2.manchester in 308/355, trend regress lags(8) /// 0.002 -5.166
+dfuller D2.manchester in 308/355, trend regress lags(8)
+/// 0.002 -5.166
 
 dfuller D2.lnmanchester in 308/355, trend regress lags(17)
 dfuller D2.lnmanchester in 308/355, trend regress lags(16)
@@ -391,11 +436,13 @@ dfuller D2.lnmanchester in 308/355, trend regress lags(12)
 dfuller D2.lnmanchester in 308/355, trend regress lags(11)
 dfuller D2.lnmanchester in 308/355, trend regress lags(10)
 dfuller D2.lnmanchester in 308/355, trend regress lags(9)
-dfuller D2.lnmanchester in 308/355, trend regress lags(8) /// 0.002 -5.059
+dfuller D2.lnmanchester in 308/355, trend regress lags(8)
+/// 0.002 -5.059
 
 *Predicting residuals, testing for co-integration
 
-regress bolton manchester in 1/149 /// 10
+regress bolton manchester in 1/149 
+/// 10
 predict res1 in 1/149, residuals
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.res1 L.res1 L(1/`lags').D.res1 in 1/149
@@ -406,13 +453,15 @@ forvalues lags = 6/11 {
 				}
 				esttab m6 m7 m8 m9 m10 m11
 regress bolton manchester in 150/355
-predict res2 in 150/355, residuals //16
+predict res2 in 150/355, residuals
+//16
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.res2 L.res2 L(1/`lags').D.res2 in 150/355
 				}
 				esttab m12 m13 m14 m15 m16 m17 
 regress lnbolton lnmanchester in 1/149
-predict res3 in 1/149, residuals //11
+predict res3 in 1/149, residuals
+//11
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.res3 L.res3 L(1/`lags').D.res3 in 1/149
 				}
@@ -422,31 +471,40 @@ forvalues lags = 6/11 {
 				}
 				esttab m6 m7 m8 m9 m10 m11
 regress lnbolton lnmanchester in 150/355
-predict res4 in 150/355, residuals ///16 
+predict res4 in 150/355, residuals
+///16 
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.res4 L.res4 L(1/`lags').D.res4 in 150/355
 				}
 				esttab m12 m13 m14 m15 m16 m17
 regress bolton manchester in 150/307
-predict res5 in 150/307, residuals /// 12
+predict res5 in 150/307, residuals
+/// 12
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.res5 L.res5 L(1/`lags').D.res5 in 150/307
 				}
 				esttab m12 m13 m14 m15 m16 m17
 regress lnbolton lnmanchester in 150/307
-predict res6 in 150/307, residuals //12
+predict res6 in 150/307, residuals
+//12
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.res6 L.res6 L(1/`lags').D.res6 in 150/307
 				}
 				esttab m12 m13 m14 m15 m16 m17
 
 *Co-integration pre, post GFC, post Covid
-egranger bolton manchester in 1/149, lags(10) regress /// -2.819 marginally below 10%
-egranger bolton manchester in 150/355, lags(16) regress /// -1.369
-egranger lnbolton lnmanchester in 1/149, lags(11) regress /// -2.498 - not significant
-egranger lnbolton lnmanchester in 150/355, lags(16) regress /// -1.392
-egranger bolton manchester in 150/307, lags(12) regress /// 3.249 10%
-egranger lnbolton lnmanchester in 150/307, lags(12) regress ///3.049 marginally below 10%
+egranger bolton manchester in 1/149, lags(10) regress
+/// -2.819 marginally below 10%
+egranger bolton manchester in 150/355, lags(16) regress
+/// -1.369
+egranger lnbolton lnmanchester in 1/149, lags(11) regress
+/// -2.498 - not significant
+egranger lnbolton lnmanchester in 150/355, lags(16) regress
+/// -1.392
+egranger bolton manchester in 150/307, lags(12) regress
+/// 3.249 10%
+egranger lnbolton lnmanchester in 150/307, lags(12) regress
+///3.049 marginally below 10%
 
 *Code
 1 - Most broad
@@ -455,7 +513,8 @@ egranger lnbolton lnmanchester in 150/307, lags(12) regress ///3.049 marginally 
 
 *ECM
 *bolton, manchester in 1/149
-regress D2.bolton D2.manchester L(1/17).D2.bolton L(1/17).D2.manchester L.res1 in 1/149 /// 1 - manchester
+regress D2.bolton D2.manchester L(1/17).D2.bolton L(1/17).D2.manchester L.res1 in 1/149
+/// 1 - manchester
 regress D2.bolton D2.manchester L(1/16).D2.bolton L(1/17).D2.manchester L.res1 in 1/149
 regress D2.bolton D2.manchester L(1/15).D2.bolton L(1/17).D2.manchester L.res1 in 1/149
 regress D2.bolton D2.manchester L(1/14).D2.bolton L(1/17).D2.manchester L.res1 in 1/149
@@ -463,7 +522,8 @@ regress D2.bolton D2.manchester L(1/13).D2.bolton L(1/17).D2.manchester L.res1 i
 regress D2.bolton D2.manchester L(1/12).D2.bolton L(1/17).D2.manchester L.res1 in 1/149
 regress D2.bolton D2.manchester L(1/11).D2.bolton L(1/17).D2.manchester L.res1 in 1/149
 regress D2.bolton D2.manchester L(1/10).D2.bolton L(1/17).D2.manchester L.res1 in 1/149
-regress D2.bolton D2.manchester L(1/9).D2.bolton L(1/17).D2.manchester L.res1 in 1/149 /// 2 - bolton
+regress D2.bolton D2.manchester L(1/9).D2.bolton L(1/17).D2.manchester L.res1 in 1/149
+/// 2 - bolton
 regress D2.bolton D2.manchester L(1/16).D2.bolton L(1/16).D2.manchester L.res1 in 1/149
 regress D2.bolton D2.manchester L(1/15).D2.bolton L(1/15).D2.manchester L.res1 in 1/149
 regress D2.bolton D2.manchester L(1/14).D2.bolton L(1/14).D2.manchester L.res1 in 1/149
@@ -472,7 +532,9 @@ regress D2.bolton D2.manchester L(1/12).D2.bolton L(1/12).D2.manchester L.res1 i
 regress D2.bolton D2.manchester L(1/11).D2.bolton L(1/11).D2.manchester L.res1 in 1/149
 regress D2.bolton D2.manchester L(1/10).D2.bolton L(1/10).D2.manchester L.res1 in 1/149
 regress D2.bolton D2.manchester L(1/9).D2.bolton L(1/9).D2.manchester L.res1 in 1/149
-regress D2.bolton D2.manchester L(1/8).D2.bolton L(1/8).D2.manchester L.res1 in 1/149 /// 3 - both
+regress D2.bolton D2.manchester L(1/8).D2.bolton L(1/8).D2.manchester L.res1 in 1/149
+regress D2.bolton D2.manchester L(1/7).D2.bolton L(1/7).D2.manchester L.res1 in 1/149
+/// 3 - both
 
 *5 bolton manchester in 150/307
 regress D.bolton D.manchester L(1/17).D.bolton L(1/17).D.manchester L.res5
@@ -480,15 +542,19 @@ regress D.bolton D.manchester L(1/16).D.bolton L(1/16).D.manchester L.res5
 regress D.bolton D.manchester L(1/15).D.bolton L(1/15).D.manchester L.res5
 regress D.bolton D.manchester L(1/14).D.bolton L(1/14).D.manchester L.res5
 regress D.bolton D.manchester L(1/13).D.bolton L(1/13).D.manchester L.res5
-regress D.bolton D.manchester L(1/12).D.bolton L(1/12).D.manchester L.res5 /// 1 bolton
+regress D.bolton D.manchester L(1/12).D.bolton L(1/12).D.manchester L.res5
+/// 1 bolton
+regress D.bolton D.manchester L(1/12).D.bolton L(1/11).D.manchester L.res5
 regress D.bolton D.manchester L(1/12).D.bolton L(1/10).D.manchester L.res5
-regress D.bolton D.manchester L(1/12).D.bolton L(1/9).D.manchester L. /// 2 manchester
+regress D.bolton D.manchester L(1/12).D.bolton L(1/9).D.manchester L.res5
+/// 2 manchester
 regress D.bolton D.manchester L(1/11).D.bolton L(1/11).D.manchester L.res5
 regress D.bolton D.manchester L(1/10).D.bolton L(1/10).D.manchester L.res5
 regress D.bolton D.manchester L(1/9).D.bolton L(1/9).D.manchester L.res5
 regress D.bolton D.manchester L(1/8).D.bolton L(1/8).D.manchester L.res5
 regress D.bolton D.manchester L(1/7).D.bolton L(1/7).D.manchester L.res5
-regress D.bolton D.manchester L(1/6).D.bolton L(1/6).D.manchester L.res5 ///3 both
+regress D.bolton D.manchester L(1/6).D.bolton L(1/6).D.manchester L.res5
+///3 both
 
 *6 lnbolton lnmanchester in 150/307
 regress D.lnbolton D.lnmanchester L(1/17).D.lnbolton L(1/17).D.lnmanchester L.res6
@@ -496,14 +562,17 @@ regress D.lnbolton D.lnmanchester L(1/16).D.lnbolton L(1/16).D.lnmanchester L.re
 regress D.lnbolton D.lnmanchester L(1/15).D.lnbolton L(1/15).D.lnmanchester L.res6
 regress D.lnbolton D.lnmanchester L(1/14).D.lnbolton L(1/14).D.lnmanchester L.res6
 regress D.lnbolton D.lnmanchester L(1/13).D.lnbolton L(1/13).D.lnmanchester L.res6
-regress D.lnbolton D.lnmanchester L(1/12).D.lnbolton L(1/12).D.lnmanchester L.res6 /// 1 bolton
-regress D.lnbolton D.lnmanchester L(1/12).D.lnbolton L(1/11).D.lnmanchester L.res6 /// 2 manchester
+regress D.lnbolton D.lnmanchester L(1/12).D.lnbolton L(1/12).D.lnmanchester L.res6
+/// 1 bolton
+regress D.lnbolton D.lnmanchester L(1/12).D.lnbolton L(1/11).D.lnmanchester L.res6
+/// 2 manchester
 regress D.lnbolton D.lnmanchester L(1/11).D.lnbolton L(1/11).D.lnmanchester L.res6
 regress D.lnbolton D.lnmanchester L(1/10).D.lnbolton L(1/10).D.lnmanchester L.res6
 regress D.lnbolton D.lnmanchester L(1/9).D.lnbolton L(1/9).D.lnmanchester L.res6
 regress D.lnbolton D.lnmanchester L(1/8).D.lnbolton L(1/8).D.lnmanchester L.res6
 regress D.lnbolton D.lnmanchester L(1/7).D.lnbolton L(1/7).D.lnmanchester L.res6
 regress D.lnbolton D.lnmanchester L(1/6).D.lnbolton L(1/6).D.lnmanchester L.res6
+/// 3
 
 *Granger Causality
 /// D2.bolton(12) D2.manchester in 1/149(11) res1
@@ -512,24 +581,78 @@ forvalues lags = 12/17 {
 				eststo m`lags': regress D2.bolton L(1/`lags').D2.bolton L(1/`lags').D2.manchester L.res1 in 1/149
 				}
 				esttab m12 m13 m14 m15 m16 m17
-regress D2.bolton L(1/14).D2.bolton L(1/14).D2.manchester L.res1 in 1/149  /// manchester
+regress D2.bolton L(1/14).D2.bolton L(1/14).D2.manchester L.res1 in 1/149
+/// manchester
 testparm L(1/14).D2.manchester L.res1
 regress D2.bolton L(1/13).D2.bolton L(1/14).D2.manchester L.res1 in 1/149
 regress D2.bolton L(1/12).D2.bolton L(1/14).D2.manchester L.res1 in 1/149
-regress D2.bolton L(1/11).D2.bolton L(1/14).D2.manchester L.res1 in 1/149  /// bolton
+regress D2.bolton L(1/11).D2.bolton L(1/14).D2.manchester L.res1 in 1/149
+/// bolton
 testparm L(1/14).D2.manchester L.res1
-regress D2.bolton L(1/12).D2.bolton L(1/12).D2.manchester L.res1 in 1/149 /// both
+regress D2.bolton L(1/12).D2.bolton L(1/12).D2.manchester L.res1 in 1/149
+/// 3 both
 testparm L(1/12).D2.manchester L.res1
 
-
+regress D2.manchester L(1/17).D2.manchester L(1/17).D2.bolton L.res1 in 1/149 
+forvalues lags = 12/17 {
+				eststo m`lags': regress D2.manchester L(1/`lags').D2.manchester L(1/`lags').D2.bolton L.res1 in 1/149
+				}
+				esttab m12 m13 m14 m15 m16 m17
+regress D2.manchester L(1/14).D2.manchester L(1/14).D2.bolton L.res1 in 1/149
+testparm L(1/14).D2.bolton L.res1
+/// 1 bolton
+regress D2.manchester L(1/13).D2.manchester L(1/14).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/12).D2.manchester L(1/14).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/11).D2.manchester L(1/14).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/10).D2.manchester L(1/14).D2.bolton L.res1 in 1/149
+testparm L(1/10).D2.bolton L.res1
+/// 2 manchester
+regress D2.manchester L(1/13).D2.manchester L(1/13).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/12).D2.manchester L(1/12).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/11).D2.manchester L(1/11).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/10).D2.manchester L(1/10).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/9).D2.manchester L(1/9).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/8).D2.manchester L(1/8).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/7).D2.manchester L(1/7).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/6).D2.manchester L(1/6).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/5).D2.manchester L(1/5).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/4).D2.manchester L(1/4).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/3).D2.manchester L(1/3).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/2).D2.manchester L(1/2).D2.bolton L.res1 in 1/149
+regress D2.manchester L(1/1).D2.manchester L(1/1).D2.bolton L.res1 in 1/149
+testparm L(1/1).D2.bolton L.res1
+/// 3 both
 /// bolton(14) manchester in 150/355(13) res2
-regress D.bolton L(1/17).D.bolton L(1/17).D.manchester L.res2 in 150/355 ///15
+regress D.bolton L(1/17).D.bolton L(1/17).D.manchester L.res2 in 150/355
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.bolton L(1/`lags').D.bolton L(1/`lags').D.manchester L.res2 in 150/355
 				}
 				esttab m12 m13 m14 m15 m16 m17
-regress D.bolton L(1/16).D.bolton L(1/16).D.manchester L.res2 in 150/355 // 1,2, and 3
+regress D.bolton L(1/16).D.bolton L(1/16).D.manchester L.res2 in 150/355
+// 1,2, and 3
 testparm L(1/16).D.manchester L.res2
+regress D.manchester L(1/17).D.manchester L(1/17).D.bolton L.res2 in 150/355
+forvalues lags = 12/17 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D.bolton L.res2 in 150/355
+				}
+				esttab m12 m13 m14 m15 m16 m17
+regress D.manchester L(1/15).D.manchester L(1/15).D.bolton L.res2 in 150/355
+/// 1 bolton
+testparm L(1/15).D.bolton L.res2
+regress D.manchester L(1/14).D.manchester L(1/15).D.bolton L.res2 in 150/355
+regress D.manchester L(1/13).D.manchester L(1/15).D.bolton L.res2 in 150/355
+regress D.manchester L(1/12).D.manchester L(1/15).D.bolton L.res2 in 150/355
+/// 2 manchester
+testparm L(1/12).D.bolton L.res2
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D.bolton L.res2 in 150/355
+				}
+				esttab m6 m7 m8 m9 m10 m11
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D.bolton L.res2 in 150/355
+				}
+				esttab m1 m2 m3 m4 m5
+
 
 /// bolton(14) manchester in 150/307(9) res5
 regress D.bolton L(1/17).D.bolton L(1/17).D.manchester L.res5 in 150/307
@@ -545,19 +668,47 @@ forvalues lags = 1/5 {
 				eststo m`lags': regress D.bolton L(1/`lags').D.bolton L(1/`lags').D.manchester L.res5 in 150/307
 				}
 				esttab m1 m2 m3 m4 m5
-regress D.bolton L(1/4).D.bolton L(1/4).D.manchester L.res5 in 150/307 // 1 -manchester
+regress D.bolton L(1/4).D.bolton L(1/4).D.manchester L.res5 in 150/307
+// 1 -manchester
 testparm L(1/4).D.manchester L.res5
 regress D.bolton L(1/3).D.bolton L(1/4).D.manchester L.res5 in 150/307 
 regress D.bolton L(1/2).D.bolton L(1/4).D.manchester L.res5 in 150/307
-regress D.bolton L(1/1).D.bolton L(1/4).D.manchester L.res5 in 150/307 // 2, 3
+regress D.bolton L(1/1).D.bolton L(1/4).D.manchester L.res5 in 150/307
+// 2, 3
 testparm L(1/4).D.manchester L.res5
-
+regress D.manchester L(1/17).D.manchester L(1/17).D.bolton L.res5 in 150/307
+forvalues lags = 12/17 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D.bolton L.res5 in 150/307
+				}
+				esttab m12 m13 m14 m15 m16 m17
+regress D.manchester L(1/15).D.manchester L(1/15).D.bolton L.res5 in 150/307
+// 1 bolton
+testparm L(1/15).D.bolton L.res5
+regress D.manchester L(1/14).D.manchester L(1/15).D.bolton L.res5 in 150/307
+regress D.manchester L(1/13).D.manchester L(1/15).D.bolton L.res5 in 150/307
+regress D.manchester L(1/12).D.manchester L(1/15).D.bolton L.res5 in 150/307
+regress D.manchester L(1/11).D.manchester L(1/15).D.bolton L.res5 in 150/307
+regress D.manchester L(1/10).D.manchester L(1/15).D.bolton L.res5 in 150/307
+// 2 manchester
+testparm L(1/10).D.bolton L.res5
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D.bolton L.res5 in 150/307
+				}
+				esttab m6 m7 m8 m9 m10 m11
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D.bolton L.res5 in 150/307
+				}
+				esttab m1 m2 m3 m4 m5
 /// bolton(1) D2.manchester in 308/355(8)
-regress D.bolton L(1/17).D.bolton L(1/17).D2.manchester in 308/355 // 1 Bolton
-testparm L(1/17).D2.manchester //0.1309
+regress D.bolton L(1/17).D.bolton L(1/17).D2.manchester in 308/355
+// 1 Bolton
+testparm L(1/17).D2.manchester
+//0.1309
 regress D.bolton L(1/17).D.bolton L(1/16).D2.manchester in 308/355
-regress D.bolton L(1/17).D.bolton L(1/15).D2.manchester in 308/355 // 2 manchester
-testparm L(1/15).D2.manchester //0.1838
+regress D.bolton L(1/17).D.bolton L(1/15).D2.manchester in 308/355
+// 2 manchester
+testparm L(1/15).D2.manchester
+//0.1838
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.bolton L(1/`lags').D.bolton L(1/`lags').D2.manchester in 308/355
 				}
@@ -571,34 +722,72 @@ forvalues lags = 1/5 {
 				}
 				esttab m1 m2 m3 m4 m5
 regress D.bolton L(1/1).D.bolton L(1/1).D2.manchester in 308/355
-reg D.bolton D2.manchester in 308/355 // no test for both
+reg D.bolton D2.manchester in 308/355
+// no test for both
 testparm D2.manchester
-
+regress D.manchester L(1/17).D.manchester L(1/17).D2.bolton in 308/355
+forvalues lags = 12/17 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D2.bolton in 308/355
+				}
+				esttab m12 m13 m14 m15 m16 m17
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D2.bolton in 308/355
+				}
+				esttab m6 m7 m8 m9 m10 m11
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.manchester L(1/`lags').D.manchester L(1/`lags').D2.bolton in 308/355
+				}
+				esttab m1 m2 m3 m4 m5
+regress D.manchester L(1/5).D.manchester L(1/5).D2.bolton in 308/355
+// 1 bolton
+testparm L(1/5).D2.bolton
+regress D.manchester L(1/4).D.manchester L(1/5).D2.bolton in 308/355
+regress D.manchester L(1/3).D.manchester L(1/5).D2.bolton in 308/355
+regress D.manchester L(1/2).D.manchester L(1/5).D2.bolton in 308/355
+regress D.manchester L(1/1).D.manchester L(1/5).D2.bolton in 308/355
+// 2 manchester
+testparm L(1/1).D2.bolton
+regress D.manchester D2.bolton in 308/355
+// no both
 /// D2.lnbolton(8) D2.lnmanchester in 1/149(9) res3
 regress D2.lnbolton L(1/17).D2.lnbolton L(1/17).D2.manchester L.res3 in 1/149
 forvalues lags = 12/17 {
 				eststo m`lags': regress D2.lnbolton L(1/`lags').D2.lnbolton L(1/`lags').D2.lnmanchester L.res3 in 1/149
 				}
 				esttab m12 m13 m14 m15 m16 m17
-regress D2.lnbolton L(1/17).D2.bolton L(1/17).D2.manchester L.res3 in 1/149 /// 1 manchester
+regress D2.lnbolton L(1/17).D2.bolton L(1/17).D2.manchester L.res3 in 1/149
+/// 1 manchester
 testparm L(1/17).D2.manchester L.res3
-regress D2.lnbolton L(1/13).D2.bolton L(1/17).D2.manchester L.res3 in 1/149 /// 2 bolton
+regress D2.lnbolton L(1/13).D2.bolton L(1/17).D2.manchester L.res3 in 1/149
+/// 2 bolton
 testparm L(1/17).D2.manchester L.res3
 forvalues lags = 6/11 {
 				eststo m`lags': regress D2.lnbolton L(1/`lags').D2.lnbolton L(1/`lags').D2.lnmanchester L.res3 in 1/149
 				}
 				esttab m6 m7 m8 m9 m10 m11
-regress D2.lnbolton L(1/9).D2.bolton L(1/9).D2.manchester L.res3 in 1/149 //3 both
+regress D2.lnbolton L(1/9).D2.bolton L(1/9).D2.manchester L.res3 in 1/149
+//3 both
 testparm L(1/9).D2.manchester L.res3
+regress D2.lnmanchester L(1/17).D2.lnmanchester L(1/17).D2.lnbolton L.res3 in 1/149
+forvalues lags = 12/17 {
+				eststo m`lags': regress D2.lnmanchester L(1/`lags').D2.lnmanchester L(1/`lags').D2.lnbolton L.res3 in 1/149
+				}
+				esttab m12 m13 m14 m15 m16 m17
+regress D2.lnmanchester L(1/14).D2.lnmanchester L(1/14).D2.lnbolton L.res3 in 1/149
+/// 1, 2 and 3
+testparm L(1/14).D2.bolton L.res3
+
 /// lnbolton(14) lnmanchester in 150/355(12) res4
 regress D.lnbolton L(1/17).D.lnbolton L(1/17).D.lnmanchester L.res4 in 150/355
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.lnbolton L(1/`lags').D.lnbolton L(1/`lags').D.lnmanchester L.res4 in 150/355
 				}
 				esttab m12 m13 m14 m15 m16 m17
-regress D.lnbolton L(1/16).D.lnbolton L(1/16).D.manchester L.res4 in 150/355 // 1 manchester
+regress D.lnbolton L(1/16).D.lnbolton L(1/16).D.manchester L.res4 in 150/355
+// 1 manchester
 testparm L(1/16).D.manchester L.res4
-regress D.lnbolton L(1/14).D.lnbolton L(1/16).D.manchester L.res4 in 150/355 // 2 bolton
+regress D.lnbolton L(1/14).D.lnbolton L(1/16).D.manchester L.res4 in 150/355
+// 2 bolton
 testparm L(1/16).D.manchester L.res4
 regress D.lnbolton L(1/15).D.lnbolton L(1/15).D.manchester L.res4 in 150/355
 regress D.lnbolton L(1/14).D.lnbolton L(1/14).D.manchester L.res4 in 150/355
@@ -616,13 +805,38 @@ regress D.lnbolton L(1/3).D.lnbolton L(1/3).D.manchester L.res4 in 150/355
 regress D.lnbolton L(1/2).D.lnbolton L(1/2).D.manchester L.res4 in 150/355
 regress D.lnbolton L(1/1).D.lnbolton L(1/1).D.manchester L.res4 in 150/355
 testparm L(1/1).D.manchester L.res4
+regress D.lnmanchester L(1/17).D.lnmanchester L(1/17).D.lnbolton L.res4 in 150/355
+forvalues lags = 12/17 {
+				eststo m`lags': regress D.lnmanchester L(1/`lags').D.lnmanchester L(1/`lags').D.lnbolton L.res4 in 150/355
+				}
+				esttab m12 m13 m14 m15 m16 m17
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.lnmanchester L(1/`lags').D.lnmanchester L(1/`lags').D.lnbolton L.res4 in 150/355
+				}
+				esttab m6 m7 m8 m9 m10 m11
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.lnmanchester L(1/`lags').D.lnmanchester L(1/`lags').D.lnbolton L.res4 in 150/355
+				}
+				esttab m1 m2 m3 m4 m5
+regress D.lnmanchester L(1/15).D.lnmanchester L(1/15).D.lnbolton L.res4 in 150/355
+/// 1 bolton
+testparm L(1/15).D2.manchester L.res4
+regress D.lnmanchester L(1/14).D.lnmanchester L(1/15).D.lnbolton L.res4 in 150/355
+regress D.lnmanchester L(1/13).D.lnmanchester L(1/15).D.lnbolton L.res4 in 150/355
+regress D.lnmanchester L(1/12).D.lnmanchester L(1/15).D.lnbolton L.res4 in 150/355
+regress D.lnmanchester L(1/11).D.lnmanchester L(1/15).D.lnbolton L.res4 in 150/355
+regress D.lnmanchester L(1/10).D.lnmanchester L(1/15).D.lnbolton L.res4 in 150/355
+testparm L(1/10).D.manchester L.res4
+// No both
+
 /// lnbolton(14) lnmanchester in 150/307(9) res6
 regress D.lnbolton L(1/17).D.lnbolton L(1/17).D.lnmanchester L.res6 in 150/307
 forvalues lags = 12/17 {
 				eststo m`lags': regress D.lnbolton L(1/`lags').D.lnbolton L(1/`lags').D.lnmanchester L.res6 in 150/307
 				}
 				esttab m12 m13 m14 m15 m16 m17
-regress D.lnbolton L(1/12).D.lnbolton L(1/12).D.lnmanchester L.res6 in 150/307 // 1 bolton
+regress D.lnbolton L(1/12).D.lnbolton L(1/12).D.lnmanchester L.res6 in 150/307
+// 1 bolton
 testparm L(1/12).D.lnmanchester L.res6
 regress D.lnbolton L(1/12).D.lnbolton L(1/11).D.lnmanchester L.res6 in 150/307
 regress D.lnbolton L(1/12).D.lnbolton L(1/10).D.lnmanchester L.res6 in 150/307
@@ -631,7 +845,8 @@ regress D.lnbolton L(1/12).D.lnbolton L(1/8).D.lnmanchester L.res6 in 150/307
 regress D.lnbolton L(1/12).D.lnbolton L(1/7).D.lnmanchester L.res6 in 150/307
 regress D.lnbolton L(1/12).D.lnbolton L(1/6).D.lnmanchester L.res6 in 150/307
 regress D.lnbolton L(1/12).D.lnbolton L(1/5).D.lnmanchester L.res6 in 150/307
-regress D.lnbolton L(1/12).D.lnbolton L(1/4).D.lnmanchester L.res6 in 150/307 //2 manchester
+regress D.lnbolton L(1/12).D.lnbolton L(1/4).D.lnmanchester L.res6 in 150/307
+//2 manchester
 testparm L(1/4).D.lnmanchester L.res6
 regress D.lnbolton L(1/11).D.lnbolton L(1/11).D.lnmanchester L.res6 in 150/307
 regress D.lnbolton L(1/10).D.lnbolton L(1/10).D.lnmanchester L.res6 in 150/307
@@ -643,40 +858,93 @@ regress D.lnbolton L(1/5).D.lnbolton L(1/5).D.lnmanchester L.res6 in 150/307
 regress D.lnbolton L(1/4).D.lnbolton L(1/4).D.lnmanchester L.res6 in 150/307
 regress D.lnbolton L(1/3).D.lnbolton L(1/3).D.lnmanchester L.res6 in 150/307
 regress D.lnbolton L(1/2).D.lnbolton L(1/2).D.lnmanchester L.res6 in 150/307
-regress D.lnbolton L(1/1).D.lnbolton L(1/1).D.lnmanchester L.res6 in 150/307 // 3 both
+regress D.lnbolton L(1/1).D.lnbolton L(1/1).D.lnmanchester L.res6 in 150/307
+// 3 both
 testparm L(1/1).D.lnmanchester L.res6
+regress D.lnmanchester L(1/17).D.lnmanchester L(1/17).D.lnbolton L.res6 in 150/307
+forvalues lags = 12/17 {
+				eststo m`lags': regress D.lnmanchester L(1/`lags').D.lnmanchester L(1/`lags').D.lnbolton L.res6 in 150/307
+				}
+				esttab m12 m13 m14 m15 m16 m17
+forvalues lags = 6/11 {
+				eststo m`lags': regress D.lnmanchester L(1/`lags').D.lnmanchester L(1/`lags').D.lnbolton L.res6 in 150/307
+				}
+				esttab m6 m7 m8 m9 m10 m11
+forvalues lags = 1/5 {
+				eststo m`lags': regress D.lnmanchester L(1/`lags').D.lnmanchester L(1/`lags').D.lnbolton L.res6 in 150/307
+				}
+				esttab m1 m2 m3 m4 m5
+regress D.lnmanchester L(1/15).D.lnmanchester L(1/15).D.lnbolton L.res6 in 150/307
+// 1 bolton
+testparm L(1/15).D.bolton L.res6
+regress D.lnmanchester L(1/14).D.lnmanchester L(1/15).D.lnbolton L.res6 in 150/307
+regress D.lnmanchester L(1/13).D.lnmanchester L(1/15).D.lnbolton L.res6 in 150/307
+regress D.lnmanchester L(1/12).D.lnmanchester L(1/15).D.lnbolton L.res6 in 150/307
+regress D.lnmanchester L(1/11).D.lnmanchester L(1/15).D.lnbolton L.res6 in 150/307
+regress D.lnmanchester L(1/10).D.lnmanchester L(1/15).D.lnbolton L.res6 in 150/307
+//2 manchester
+testparm L(1/10).D.bolton L.res6
+regress D.lnmanchester L(1/3).D.lnmanchester L(1/3).D.lnbolton L.res6 in 150/307
+//3 both
+testparm L(1/3).D.bolton L.res6
+
+
+
 /// lnbolton(3) D2.lnmanchester in 308/355(8)
-reg D.lnbolton L(1/17).D.lnbolton D2.lnmanchester L(1/17).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/16).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-testparm L(1/16).D2.lnmanchester
-reg D.lnbolton L(1/15).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355 // 1 manchester
-reg D.lnbolton L(1/14).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/13).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/12).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/11).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/10).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/9).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/8).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/7).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/6).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/5).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/4).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/3).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/2).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/1).D.lnbolton D2.lnmanchester L(1/16).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/15).D.lnbolton D2.lnmanchester L(1/15).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/14).D.lnbolton D2.lnmanchester L(1/14).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/13).D.lnbolton D2.lnmanchester L(1/13).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/12).D.lnbolton D2.lnmanchester L(1/12).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/11).D.lnbolton D2.lnmanchester L(1/11).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/10).D.lnbolton D2.lnmanchester L(1/10).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/9).D.lnbolton D2.lnmanchester L(1/9).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/8).D.lnbolton D2.lnmanchester L(1/8).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/7).D.lnbolton D2.lnmanchester L(1/7).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/6).D.lnbolton D2.lnmanchester L(1/6).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/5).D.lnbolton D2.lnmanchester L(1/5).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/4).D.lnbolton D2.lnmanchester L(1/4).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/3).D.lnbolton D2.lnmanchester L(1/3).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/2).D.lnbolton D2.lnmanchester L(1/2).D2.lnmanchester in 308/355
-reg D.lnbolton L(1/1).D.lnbolton D2.lnmanchester L(1/1).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/17).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+testparm L(1/17).D2.lnmanchester
+// 1 manchester
+reg D.lnbolton L(1/16).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/15).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/14).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/13).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/12).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/11).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/10).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/9).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/8).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/7).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/6).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/5).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/4).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/3).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/2).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/1).D.lnbolton L(1/17).D2.lnmanchester in 308/355
+// 2 bolton
+testparm L(1/1).D2.lnmanchester
+reg D.lnbolton L(1/16).D.lnbolton L(1/16).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/15).D.lnbolton L(1/15).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/14).D.lnbolton L(1/14).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/13).D.lnbolton L(1/13).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/12).D.lnbolton L(1/12).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/11).D.lnbolton L(1/11).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/10).D.lnbolton L(1/10).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/9).D.lnbolton L(1/9).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/8).D.lnbolton L(1/8).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/7).D.lnbolton L(1/7).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/6).D.lnbolton L(1/6).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/5).D.lnbolton L(1/5).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/4).D.lnbolton L(1/4).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/3).D.lnbolton L(1/3).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/2).D.lnbolton L(1/2).D2.lnmanchester in 308/355
+reg D.lnbolton L(1/1).D.lnbolton L(1/1).D2.lnmanchester in 308/355
 reg D.lnbolton D2.lnmanchester in 308/355
+// none for both
+reg D2.lnmanchester L(1/17).D2.lnmanchester L(1/17).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/16).D2.lnmanchester L(1/16).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/15).D2.lnmanchester L(1/15).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/14).D2.lnmanchester L(1/14).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/13).D2.lnmanchester L(1/13).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/12).D2.lnmanchester L(1/12).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/11).D2.lnmanchester L(1/11).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/10).D2.lnmanchester L(1/10).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/9).D2.lnmanchester L(1/9).D.lnbolton in 308/355
+testparm L(1/9).D.bolton
+reg D2.lnmanchester L(1/9).D2.lnmanchester L(1/8).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/9).D2.lnmanchester L(1/7).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/9).D2.lnmanchester L(1/6).D.lnbolton in 308/355
+testparm L(1/6).D.bolton
+reg D2.lnmanchester L(1/8).D2.lnmanchester L(1/8).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/7).D2.lnmanchester L(1/7).D.lnbolton in 308/355
+reg D2.lnmanchester L(1/6).D2.lnmanchester L(1/6).D.lnbolton in 308/355
+testparm L(1/6).D.bolton
